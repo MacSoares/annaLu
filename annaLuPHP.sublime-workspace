@@ -1,0 +1,332 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sub",
+				"subsection"
+			],
+			[
+				"sl",
+				"self"
+			],
+			[
+				"new",
+				"new_isbn"
+			],
+			[
+				"is",
+				"isbn"
+			],
+			[
+				"book",
+				"book_price"
+			],
+			[
+				"Ar",
+				"ArgumentError"
+			],
+			[
+				"boo",
+				"book_price"
+			],
+			[
+				"lin",
+				"line_number"
+			],
+			[
+				"find",
+				"find_by_tag"
+			],
+			[
+				"bus",
+				"busline_json"
+			],
+			[
+				"busl",
+				"busline"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"proj",
+				"Project: Add Folder"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/MacSoares/Sites/annaLu"
+	],
+	"file_history":
+	[
+		"/Users/MacSoares/Sites/annaLu/application/index.html",
+		"/Users/MacSoares/Sites/SiGA/application/index.html",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/relatorioVHDL/conteudo/referencias.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/relatorioVHDL/conteudo/relatorio.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/relatorioVHDL/images/tela_esquema.png",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/Chatterbots/conteudo/relatorio.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/Transcendence/conteudo/conteudo.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/Transcendence/conteudo/referencias.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/relatorioVHDL/main.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/relatorioVHDL/abstract.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/relatorioVHDL/grupos.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/relatorioVHDL/title_page.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/Transcendence/main.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/Transcendence/grupos.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/relatorioVHDL/import_conteudos.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/Transcendence/import_conteudos.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/Transcendence/glossary.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/Chatterbots/grupos.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/Chatterbots/title_page.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/Chatterbots/import_conteudos.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/Chatterbots/conteudo/referencias.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/Chatterbots/bibliography.bib",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/Transcendence/title_page.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/Chatterbots/main.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatorioFilmeIA/Chatterbots/conteudo/referencias.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatorioFilmeIA/Chatterbots/conteudo/relatorio.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatorioFilmeIA/Transcendence/conteudo/conteudo.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatorioFilmeIA/Chatterbots/import_conteudos.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatorioFilmeIA/Transcendence/import_conteudos.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatorioFilmeIA/Chatterbots/bibliography.bib",
+		"/Users/MacSoares/TrabalhosTEX/RelatorioFilmeIA/Chatterbots/abstract.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatorioFilmeIA/Chatterbots/title_page.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatorioFilmeIA/Chatterbots/main.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatorioFilmeIA/Transcendence/main.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatorioFilmeIA/Transcendence/conteudo/introducao.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatorioFilmeIA/Transcendence/conteudo/referencias.tex",
+		"/Users/MacSoares/TrabalhosTEX/RelatorioFilmeIA/Transcendence/grupos.tex",
+		"/Users/MacSoares/Dropbox/UnB/PI2/FGABrejaRelatoriosTex/conteudo/processo.tex",
+		"/Users/MacSoares/DAS - Homeworks/hw-ruby-intro/spec/part1_spec.rb",
+		"/Users/MacSoares/DAS - Homeworks/hw-ruby-intro/spec/part3_spec.rb",
+		"/Users/MacSoares/DAS - Homeworks/hw-ruby-intro/.rspec",
+		"/Users/MacSoares/DAS - Homeworks/hw-ruby-intro/spec/part2_spec.rb",
+		"/Users/MacSoares/Downloads/ProjetoRelacaoCursosServlet.txt",
+		"/Users/MacSoares/Downloads/ProjetoRelacaoCursosServlet",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/BusinemeWeb/features/steps.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/controllers/tests/test_user.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/templates/busline_profile.html",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/templates/fav_page.html",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/controllers/busline_controller.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/controllers/main.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/controllers/post_controller.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/controllers/tests/test_post_controller.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/controllers/tests/test_utils.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/Showtime/README.md",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/templates/main.html",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/templates/base.html",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/templates/topbar.html",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/templates/search_result_page.html",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/templates/advanced_search_busline.html",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/BusinemeWeb/features/advanced_search_lines.feature",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/controllers/utils.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/BusinemeWeb/features/search_busline.feature",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/BusinemeWeb/urls.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/BusinemeWeb/features/steps_advanced_search_busline.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/BusinemeWeb/features/steps_search_busline.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/controllers/buslineController.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/.travis.yml",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/requirements.txt",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/configuration/settings.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/configuration/security.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/Showtime/release1/slides.html",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/api/tests/test_busiline.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/api/busline.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/configuration/apps.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/api/models/busline.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/configuration/api.py",
+		"/Users/MacSoares/Python/projetos/virtualenvs/busine-me/BusinemeWeb/api/__init__.py",
+		"/Users/MacSoares/Downloads/TSA1-110016459.cpp",
+		"/Users/MacSoares/Dropbox/UnB/EDA/TSA'S/TSA-1/big_compras.c",
+		"/Volumes/CRUZER FIT/EDA/TSA'S/TSA-1/big_compras.c",
+		"/Volumes/CRUZER FIT/EDA/TSA'S/TSA-1/MovimentoVendas.txt",
+		"/Users/MacSoares/Desktop/exemplo lib math.h",
+		"/Users/MacSoares/Desktop/Clientes.txt"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"<current file>",
+			"",
+			"<current file>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"trancendence",
+			"transcendence",
+			"chatterbot",
+			"chatterbots",
+			"<td style=\"text-align: left;\"><a href=\"#\" onclick=\"",
+			"<td style=\"text-align: left;\"><a href=\"#\" onclick=\"submeter('27');\n                          \">",
+			"self.user"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			" \\textit{Transcendence}",
+			" \\textit{chatterbots}",
+			" "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/Users/MacSoares/Sites/annaLu"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/vhdl/VHDL.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 261.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
