@@ -80,12 +80,70 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
     <section class="sidebar">
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">Menu Principal</li>
+        <li class="header">Seja Bem Vinda!</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+            <i class="fa fa-home"></i> <span>Página Inicial</span>
           </a>
         </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user"></i> <span>Clientes</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <a><i class="fa fa-list"></i> <span>Listar Clientes</span></a>
+            </li>
+            <li>
+              <a><i class="fa fa-pencil"></i> <span>Cadastrar Clientes</span></a>
+            </li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-truck"></i> <span>Fornecedores</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <a><i class="fa fa-list"></i> <span>Listar Fornecedores</span></a>
+            </li>
+            <li>
+              <a><i class="fa fa-pencil"></i> <span>Cadastrar Fornecedores</span></a>
+            </li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dropbox"></i> <span>Estoque</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <a><i class="fa fa-list"></i> <span>Listar Peças</span></a>
+            </li>
+            <li>
+              <a><i class="fa fa-pencil"></i> <span>Salvar nova peça</span></a>
+            </li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-check"></i> <span>Reservas</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <a><i class="fa fa-list"></i> <span>Mostrar Reservas</span></a>
+            </li>
+            <li>
+              <a><i class="fa fa-pencil"></i> <span>Registrar Reserva</span></a>
+            </li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-line-chart"></i> <span>Fluxo de Caixa</span>
+          </a>
+        </li>
+
     </section>
     <!-- /.sidebar -->
   </aside>
