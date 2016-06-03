@@ -92,7 +92,10 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
           </a>
           <ul class="treeview-menu">
             <li>
-              <a><i class="fa fa-list"></i> <span>Listar Clientes</span></a>
+              <a>
+                <span><?=anchor("get_cliente"," Listar Clientes","class='fa fa-list'");?>
+                </span>
+              </a>
             </li>
             <li>
               <a><i class="fa fa-pencil"></i> <span>Cadastrar Clientes</span></a>
