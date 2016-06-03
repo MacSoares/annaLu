@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"var",
+				"var_dump"
+			],
+			[
 				"ID",
 				"IDPRODUTO_FK"
 			],
@@ -59,33 +63,6 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "<?php\ndefined('BASEPATH') OR exit('No direct script access allowed');\n\nclass Welcome extends CI_Controller {\n\n	/**\n	 * Index Page for this controller.\n	 *\n	 * Maps to the following URL\n	 * 		http://example.com/index.php/welcome\n	 *	- or -\n	 * 		http://example.com/index.php/welcome/index\n	 *	- or -\n	 * Since this controller is set as the default controller in\n	 * config/routes.php, it's displayed at http://example.com/\n	 *\n	 * So any other public methods not prefixed with an underscore will\n	 * map to /index.php/welcome/<method_name>\n	 * @see https://codeigniter.com/user_guide/general/urls.html\n	 */\n	public function index()\n	{\n		$this->load->library('migration');\n        if ($this->migration->current()) {\n            \"success\", \"Banco de dados atualizado com sucesso\");\n        } else {\n            show_error($this->migration->error_string());\n        }\n\n		$this->load->view('welcome_message');\n	}\n}\n",
-			"file": "application/controllers/Welcome.php",
-			"file_size": 1014,
-			"file_write_time": 131092628520000000,
-			"settings":
-			{
-				"buffer_size": 910,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "application/config/config.php",
-			"settings":
-			{
-				"buffer_size": 18120,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "application/config/migration.php",
-			"settings":
-			{
-				"buffer_size": 3031,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -133,28 +110,25 @@
 	"expanded_folders":
 	[
 		"/Users/MacSoares/Sites/annaLu",
-		"/Users/MacSoares/Sites/annaLu/application",
-		"/Users/MacSoares/Sites/annaLu/application/config",
-		"/Users/MacSoares/Sites/annaLu/application/migrations",
-		"/Users/MacSoares/Sites/annaLu/application/views"
+		"/Users/MacSoares/Sites/annaLu/application"
 	],
 	"file_history":
 	[
-		"/Users/MacSoares/Sites/annaLu/application/config/autoload.php",
-		"/Users/MacSoares/Sites/annaLu/application/migrations/006_cria_tabela_de_reserva.php",
 		"/Users/MacSoares/Sites/annaLu/application/migrations/001_cria_tabela_de_clientes.php",
+		"/Users/MacSoares/Sites/annaLu/application/migrations/006_cria_tabela_de_reserva.php",
+		"/Users/MacSoares/Sites/annaLu/application/views/welcome_message.php",
+		"/Users/MacSoares/Sites/annaLu/application/controllers/Welcome.php",
+		"/Users/MacSoares/Sites/annaLu/application/config/config.php",
+		"/Users/MacSoares/Sites/annaLu/application/config/routes.php",
+		"/Users/MacSoares/Sites/annaLu/application/config/autoload.php",
+		"/Users/MacSoares/Sites/annaLu/application/config/migration.php",
 		"/Users/MacSoares/Sites/annaLu/system/language/english/migration_lang.php",
 		"/Users/MacSoares/Sites/annaLu/application/controllers/utils.php",
-		"/Users/MacSoares/Sites/annaLu/application/views/welcome_message.php",
-		"/Users/MacSoares/Sites/annaLu/application/config/routes.php",
-		"/Users/MacSoares/Sites/annaLu/application/config/config.php",
 		"/Users/MacSoares/Sites/annaLu/application/migrations/004_cria_tabela_vendas.php",
 		"/Users/MacSoares/Sites/annaLu/application/migrations/005_cria_tabela_de_caixa.php",
 		"/Users/MacSoares/Sites/annaLu/application/migrations/003_cria_tabela_de_estoque.php",
 		"/Users/MacSoares/Sites/annaLu/application/migrations/002_cria_tabela_de_fornecedores.php",
-		"/Users/MacSoares/Sites/annaLu/application/config/migration.php",
 		"/Users/MacSoares/Sites/annaLu/application/config/database.php",
-		"/Users/MacSoares/Sites/annaLu/application/controllers/Welcome.php",
 		"/Users/MacSoares/Sites/annaLu/css/pages/index2.html",
 		"/Users/MacSoares/Sites/annaLu/application/config/constants.php",
 		"/Users/MacSoares/Sites/annaLu/application/config/doctypes.php",
@@ -245,7 +219,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 58.0
 	},
 	"find_in_files":
 	{
@@ -263,6 +237,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Layout",
+			"control-sidebar",
 			"trancendence",
 			"transcendence",
 			"chatterbot",
@@ -296,271 +272,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "application/controllers/Welcome.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 910,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								726,
-								726
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "application/config/config.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 18120,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2712,
-								2712
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 923.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "application/config/migration.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3031,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2236,
-								2240
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 777.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -645,7 +358,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 287.0,
+	"side_bar_width": 225.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
