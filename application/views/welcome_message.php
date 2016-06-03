@@ -93,12 +93,15 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
           <ul class="treeview-menu">
             <li>
               <a>
-                <span><?=anchor("get_cliente"," Listar Clientes","class='fa fa-list'");?>
+                <span><?=anchor("get_listar_cliente"," Listar Clientes","class='fa fa-list'");?>
                 </span>
               </a>
             </li>
             <li>
-              <a><i class="fa fa-pencil"></i> <span>Cadastrar Clientes</span></a>
+              <a>
+                <span><?=anchor("get_cadastrar_cliente"," Cadastrar Clientes","class='fa fa-pencil'");?>
+                </span>
+              </a>
             </li>
           </ul>
         </li>
@@ -108,10 +111,17 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
           </a>
           <ul class="treeview-menu">
             <li>
-              <a><i class="fa fa-list"></i> <span>Listar Fornecedores</span></a>
+
+              <a>
+                <span><?= anchor("get_listar_fornecedores", "Listar Fornecedores", "class='fa fa-list'");?>
+                </span>
+              </a>
             </li>
             <li>
-              <a><i class="fa fa-pencil"></i> <span>Cadastrar Fornecedores</span></a>
+             <a>
+                <span><?= anchor("get_cadastrar_fornecedores", "Cadastrar Fornecedores", "class='fa fa-pencil'");?>
+                </span>
+             </a>
             </li>
           </ul>
         </li>
@@ -121,10 +131,16 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
           </a>
           <ul class="treeview-menu">
             <li>
-              <a><i class="fa fa-list"></i> <span>Listar Peças</span></a>
+              <a>
+                <span><?= anchor("get_listar_pecas", "Listar Peça", "class='fa fa-list'");?>
+                </span>
+              </a>
             </li>
             <li>
-              <a><i class="fa fa-pencil"></i> <span>Salvar nova peça</span></a>
+              <a>
+                <span><?= anchor("get_salvar_nova_fornecedores", "Salvar Nova Peça", "class='fa fa-pencil'");?>
+                </span>
+              </a>
             </li>
           </ul>
         </li>
@@ -134,16 +150,23 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
           </a>
           <ul class="treeview-menu">
             <li>
-              <a><i class="fa fa-list"></i> <span>Mostrar Reservas</span></a>
+              <a>
+                <span><?= anchor("get_mostrar_reservas", "Mostrar Reservas", "class='fa fa-list'");?>
+                </span>
+              </a>
             </li>
             <li>
-              <a><i class="fa fa-pencil"></i> <span>Registrar Reserva</span></a>
+              <a>
+                <span><?= anchor("get_registrar_reserva", "Registrar Reserva", "class='fa fa-pencil'");?>
+                </span>
+              </a>
             </li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-line-chart"></i> <span>Fluxo de Caixa</span>
+            <span><?= anchor("get_fluxo_caixa", "Fluxo de Caixa", "class='fa fa-chart'");?>
+            </span>
           </a>
         </li>
 
