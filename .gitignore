@@ -8,3 +8,5 @@
 
 database.php
 config.php
+
+*.sublime-workspace
