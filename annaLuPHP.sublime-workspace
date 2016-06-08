@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"di",
+				"div	Tag"
+			],
+			[
 				"var",
 				"var_dump"
 			],
@@ -64,19 +68,35 @@
 	"buffers":
 	[
 		{
-			"file": "application/controllers/cliente_controller.php",
+			"file": "application/views/welcome_message.php",
 			"settings":
 			{
-				"buffer_size": 747,
+				"buffer_size": 335,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "application/config/routes.php",
+			"file": "application/views/header.php",
 			"settings":
 			{
-				"buffer_size": 2724,
+				"buffer_size": 6433,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/core/MY_Loader.php",
+			"settings":
+			{
+				"buffer_size": 1104,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/third_party/MX/Loader.php",
+			"settings":
+			{
+				"buffer_size": 12046,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -88,7 +108,7 @@
 	"command_palette":
 	{
 		"height": 354.0,
-		"last_filter": "install",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -104,7 +124,7 @@
 				"Project: Add Folder"
 			]
 		],
-		"width": 512.0
+		"width": 557.0
 	},
 	"console":
 	{
@@ -127,22 +147,34 @@
 	[
 		"/Users/MacSoares/Sites/annaLu",
 		"/Users/MacSoares/Sites/annaLu/application",
-		"/Users/MacSoares/Sites/annaLu/application/config",
 		"/Users/MacSoares/Sites/annaLu/application/controllers",
-		"/Users/MacSoares/Sites/annaLu/application/views"
+		"/Users/MacSoares/Sites/annaLu/application/core",
+		"/Users/MacSoares/Sites/annaLu/application/third_party",
+		"/Users/MacSoares/Sites/annaLu/application/third_party/MX",
+		"/Users/MacSoares/Sites/annaLu/application/views",
+		"/Users/MacSoares/Sites/annaLu/application/views/cliente"
 	],
 	"file_history":
 	[
+		"/Users/MacSoares/Sites/annaLu/application/third_party/MX/Loader.php",
+		"/Users/MacSoares/Sites/annaLu/application/controllers/Welcome.php",
+		"/Users/MacSoares/Sites/annaLu/application/controllers/Cliente.php",
 		"/Users/MacSoares/Sites/annaLu/application/config/routes.php",
 		"/Users/MacSoares/Sites/annaLu/application/views/welcome_message.php",
+		"/Users/MacSoares/Sites/annaLu/application/views/cliente/cadastrar.php",
+		"/Users/MacSoares/Sites/annaLu/application/views/cliente/listar.php",
 		"/Users/MacSoares/Sites/annaLu/.htaccess",
 		"/Users/MacSoares/Sites/annaLu/application/.htaccess",
+		"/Users/MacSoares/Sites/annaLu/application/index.html",
+		"/Users/MacSoares/Sites/annaLu/application/controllers/Reserva.php",
+		"/Users/MacSoares/Sites/annaLu/application/controllers/FluxoDeCaixa.php",
+		"/Users/MacSoares/Sites/annaLu/application/controllers/Fornecedor.php",
+		"/Users/MacSoares/Sites/annaLu/application/controllers/Estoque.php",
 		"/Users/MacSoares/Sites/annaLu/css/font-awesome/css/font-awesome.css",
 		"/Users/MacSoares/Sites/annaLu/css/pages/forms/editors.html",
 		"/Users/MacSoares/Sites/annaLu/css/pages/index.html",
 		"/Users/MacSoares/Sites/annaLu/application/migrations/001_cria_tabela_de_clientes.php",
 		"/Users/MacSoares/Sites/annaLu/application/migrations/006_cria_tabela_de_reserva.php",
-		"/Users/MacSoares/Sites/annaLu/application/controllers/Welcome.php",
 		"/Users/MacSoares/Sites/annaLu/application/config/config.php",
 		"/Users/MacSoares/Sites/annaLu/application/config/autoload.php",
 		"/Users/MacSoares/Sites/annaLu/application/config/migration.php",
@@ -157,7 +189,6 @@
 		"/Users/MacSoares/Sites/annaLu/application/config/constants.php",
 		"/Users/MacSoares/Sites/annaLu/application/config/doctypes.php",
 		"/Users/MacSoares/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/Users/MacSoares/Sites/annaLu/application/index.html",
 		"/Users/MacSoares/Sites/SiGA/application/index.html",
 		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/relatorioVHDL/conteudo/referencias.tex",
 		"/Users/MacSoares/TrabalhosTEX/RelatoriosIA/relatorioVHDL/conteudo/relatorio.tex",
@@ -247,7 +278,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 142.0,
 		"where_history":
 		[
 			"<current file>",
@@ -261,6 +292,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"get_",
 			"form",
 			"graph",
 			"box",
@@ -281,6 +313,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
 			" \\textit{Transcendence}",
 			" \\textit{chatterbots}",
 			" "
@@ -300,24 +333,203 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "application/controllers/cliente_controller.php",
+					"file": "application/views/welcome_message.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 747,
+						"buffer_size": 335,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								84,
-								84
+								6,
+								6
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/views/header.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6433,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6433,
+								6433
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_name": "",
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "application/core/MY_Loader.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1104,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								630,
+								630
 							]
 						],
 						"settings":
@@ -389,24 +601,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "application/config/routes.php",
+					"buffer": 3,
+					"file": "application/third_party/MX/Loader.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2724,
+						"buffer_size": 12046,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2220,
-								2220
+								1820,
+								1820
 							]
 						],
 						"settings":
@@ -470,13 +682,14 @@
 								"bh_double_quote_close",
 								"bh_double_quote_content"
 							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 493.0,
+						"translation.y": 599.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

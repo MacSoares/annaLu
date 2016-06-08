@@ -18,8 +18,11 @@ class Cliente extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    public function index()
-    {
-        $this->load->view('welcome_message');
+    public function cadastrar_cliente(){
+        $this->template->load_template('cliente/cadastrar');
+    }
+
+    public function listar_cliente(){
+        $this->template->load_template('cliente/listar');
     }
 }
