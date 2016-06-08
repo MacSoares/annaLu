@@ -176,3 +176,5 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+    <section class="content">
+
