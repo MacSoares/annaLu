@@ -50,6 +50,7 @@ $route)['get_fluxo_caixa'] = 'fluxo_de_caixa_controller/fluxo_de_caixa;| This ro
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'welcome';
+$route['home'] = 'welcome/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['migrate'] = 'utils/migrate';
