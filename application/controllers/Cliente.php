@@ -23,7 +23,15 @@ class Cliente extends CI_Controller {
     }
 
     public function listar_cliente(){
-        $this->template->load_template('cliente/listar');
+        define("ESCONDER_LABEL", 2);
+        $this->load->model("cliente_model");
+        $clientes = $this->cliente_model->getClientes();
+        $data = array(
+            'salvo' => ESCONDER_LABEL,
+            'message' => '',
+            'clientes' => $clientes
+            );
+        $this->template->load_template('cliente/listar', $data);
     }
 
     public function salvarNovo(){
@@ -59,13 +67,13 @@ class Cliente extends CI_Controller {
 
         if ($salvo) {
             $passData = array(
-                'salvo' => True,
+                'salvo' => 1,
                 'status' => "success",
                 'message' => "Cliente cadastrado com sucesso!"
                 );
         }else{
             $passData = array(
-                'salvo' => False,
+                'salvo' => 0,
                 'status' => "danger",
                 'message' => "Cliente nao cadastrado. Tente novamente"
                 );

@@ -8,5 +8,11 @@ class Cliente_model extends CI_Model {
         return $salvo;
     }
 
+    public function getClientes(){
+        $clientes = $this->db->get('clientes');
+        return $clientes->result_array();
+
+    }
+
 
 }
