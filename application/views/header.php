@@ -99,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
             </li>
             <li>
               <a>
-                <span><?=anchor("cadastrar_cliente"," Cadastrar Clientes","class='fa fa-pencil'");?>
+                <span><?=anchor("cadastrar_cliente"," Cadastrar Clientes","class='fa fa-save'");?>
                 </span>
               </a>
             </li>
