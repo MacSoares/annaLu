@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+require_once(APPPATH."/controllers/Welcome.php");
 class Cliente extends CI_Controller {
 
     /**
@@ -25,4 +25,54 @@ class Cliente extends CI_Controller {
     public function listar_cliente(){
         $this->template->load_template('cliente/listar');
     }
+
+    public function salvarNovo(){
+
+        $nome = $this->input->post('nome');
+        $telefone = $this->input->post('telefone');
+        $endereco = $this->input->post('endereco');
+        $data_nascimento = $this->input->post('data_nascimento');
+        $observacao = $this->input->post('obsercacao');
+
+
+        $data = array(
+                'name' => $nome,
+                'telefone' => $telefone,
+                'endereco' => $endereco,
+                'data_nascimento' => $data_nascimento,
+                'observacoes' => $observacao
+            );
+
+        try{
+
+            $this->load->model("cliente_model");
+            $salvo = $this->cliente_model->salvarNovo($data);
+
+            $status = "success";
+            $message = "Cliente cadastrado com sucesso!";
+
+        }catch(StudentRegistrationException $e){
+
+            $status = "danger";
+            $message = $e->getMessage();
+        }
+
+        if ($salvo) {
+            $passData = array(
+                'salvo' => True,
+                'status' => "success",
+                'message' => "Cliente cadastrado com sucesso!"
+                );
+        }else{
+            $passData = array(
+                'salvo' => False,
+                'status' => "danger",
+                'message' => "Cliente nao cadastrado. Tente novamente"
+                );
+        }
+
+        $this->template->load_template('cliente/listar', $passData);
+
+    }
+
 }

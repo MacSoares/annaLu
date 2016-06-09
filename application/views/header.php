@@ -82,8 +82,8 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
       <ul class="sidebar-menu">
         <li class="header">Seja Bem Vinda!</li>
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-home"></i> <span>Página Inicial</span>
+          <a>
+            <?=anchor("home", "Página Inicial", "class='fa fa-home'");?>
           </a>
         </li>
         <li class="treeview">
