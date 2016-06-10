@@ -34,6 +34,13 @@ class Cliente extends CI_Controller {
         $this->template->load_template('cliente/listar', $data);
     }
 
+    public function delete($id_cliente){
+        $this->load->model("cliente_model");
+
+        $deletado = $this->cliente_model->deleteCliente($id_cliente);
+        $this->listar_cliente();
+    }
+
     public function salvarNovo(){
 
         $nome = $this->input->post('nome');
