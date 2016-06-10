@@ -65,8 +65,8 @@
                           <td><?php echo $value['data_nascimento'];?></td>
                           <td><?php echo $value['observacoes'];?></td>
                           <td>
-                            <?=anchor("deletar_cliente", " ", "class='fa fa-trash'" );?>
-                            <?=anchor("alterar_cliente", " ", "class='fa fa-pencil'");?>
+                            <?=anchor("deletar_cliente/{$value['id_cliente']}", " ", "class='fa fa-trash'" );?>
+                            <?=anchor("alterar_cliente/{$value['id_cliente']}", " ", "class='fa fa-pencil'");?>
                           </td>
                         </tr>
                     <?php } ?>
