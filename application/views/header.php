@@ -56,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>AL</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -83,7 +83,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
         <li class="header">Seja Bem Vinda!</li>
         <li class="treeview">
           <a>
-            <?=anchor("home", "Página Inicial", "class='fa fa-home'");?>
+            <?=anchor("home", "    Página Inicial", "class='fa fa-home'");?>
           </a>
         </li>
         <li class="treeview">
@@ -165,7 +165,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
         </li>
         <li class="treeview">
           <a href="#">
-            <span><?= anchor("fluxo_caixa", "Fluxo de Caixa", "class='fa fa-chart'");?>
+            <span><?= anchor("fluxo_caixa", "      Fluxo de Caixa", "class='fa fa-line-chart'");?>
             </span>
           </a>
         </li>
