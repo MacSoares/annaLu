@@ -1,5 +1,5 @@
 <?php
-    if($salvo == 1){ ?>
+    if($resultado == 1){ ?>
           <div class="box box-success box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">Sucesso!</h3>
@@ -16,7 +16,7 @@
             <!-- /.box-body -->
           </div>
 
-    <?php }else if($salvo ==0){ ?>
+    <?php }else if($resultado ==0){ ?>
           <div class="box box-danger box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">Erro!</h3>
@@ -49,6 +49,7 @@
                     <thead>
                         <tr>
                           <th>Nome</th>
+                          <th>CNPJ</th>
                           <th>Telefone</th>
                           <th>Endereco</th>
                           <th>Forma de Envio</th>
@@ -79,6 +80,7 @@
                       foreach ($fornecedores as $key => $value) { ?>
                         <tr>
                           <td><?php echo $value['name'];?></td>
+                          <td><?php echo $value['cnpj'];?></td>
                           <td><?php echo $value['telefone'];?></td>
                           <td><?php echo $value['endereco'];?></td>
                           <td><?php echo $value['forma_envio'];?></td>
