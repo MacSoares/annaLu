@@ -29,13 +29,13 @@ class Fornecedor extends CI_Controller {
 
         if ($passData) {
             $data = array(
-                'salvo' => $passData['salvo'],
+                'resultado' => $passData['resultado'],
                 'message' => $passData['message'],
                 'fornecedores' => $fornecedores
                 );
         }else{
             $data = array(
-                'salvo' => ESCONDER_LABEL,
+                'resultado' => ESCONDER_LABEL,
                 'message' => 'nada a dizer',
                 'fornecedores' => $fornecedores
             );
@@ -80,13 +80,13 @@ class Fornecedor extends CI_Controller {
 
         if ($salvo) {
             $passData = array(
-                'salvo' => 1,
+                'resultado' => 1,
                 'status' => "success",
                 'message' => "Fornecedor cadastrado com sucesso!"
                 );
         }else{
             $passData = array(
-                'salvo' => 0,
+                'resultado' => 0,
                 'status' => "danger",
                 'message' => "Fornecedor nao cadastrado. Tente novamente"
                 );
@@ -94,6 +94,27 @@ class Fornecedor extends CI_Controller {
 
         $this->listar_fornecedor($passData);
 
+    }
+
+    public function delete($id_fornecedor){
+        $this->load->model("fornecedor_model");
+
+        $deletado = $this->fornecedor_model->delete($id_fornecedor);
+
+        if($deletado){
+            $passData = array(
+                'resultado' => 1,
+                'status' => "success",
+                'message' => "Fornecedor deletado com sucesso."
+                );
+        }else{
+            $passData = array(
+                'resultado' => 0,
+                'status' => "danger",
+                'message' => "Fornecedor não pode ser deletado."
+                );
+        }
+        $this->listar_fornecedor($passData);
     }
 
 }

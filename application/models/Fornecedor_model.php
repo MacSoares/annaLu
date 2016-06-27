@@ -9,9 +9,9 @@ Class Fornecedor_model extends CI_Model{
         $clientes = $this->db->get('fornecedores');
         return $clientes->result_array();
     }
-    // public class deleteFornecedor($id_fornecedor){
-    //     $this->db->where('id', $id_fornecedor)
-    //     $deletado = $this->db->delete('fornecedores');
-    //     retunr $deletado;
-    // }
+    public function delete($id_fornecedor){
+        $this->db->where('id_fornecedor', $id_fornecedor);
+        $deletado = $this->db->delete('fornecedores');
+        return $deletado;
+    }
 }
