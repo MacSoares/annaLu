@@ -1,5 +1,4 @@
 <?php
-var_dump($clientes);
     if($salvo == 1){ ?>
           <div class="box box-success box-solid">
             <div class="box-header with-border">
@@ -38,10 +37,10 @@ var_dump($clientes);
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Lista de Clientes </h3>
+              <h3 class="box-title">Lista de Fornecedores </h3>
 
               <div style="margin-left:80%">
-                <?=anchor("cadastrar_cliente", "  Cadastrar novo", "class='btn btn-sm btn-success fa fa-save'" );?>
+                <?=anchor("cadastrar_fornecedores", "  Cadastrar novo", "class='btn btn-sm btn-success fa fa-save'" );?>
               </div>
             </div>
             <!-- /.box-header -->
@@ -52,25 +51,46 @@ var_dump($clientes);
                           <th>Nome</th>
                           <th>Telefone</th>
                           <th>Endereco</th>
-                          <th>Data de Nascimento</th>
+                          <th>Forma de Envio</th>
+                          <th>Forma de Pagamento</th>
                           <th>Observações</th>
                           <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($clientes as $key => $value) { ?>
+                    <?php
+                      if (!$fornecedores) {?>
+                        <div class="box box-alert box-solid">
+                          <div class="box-header with-border">
+                            <h3 class="box-title">Atenção!</h3>
+
+                            <div class="box-tools pull-right">
+                              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                            <!-- /.box-tools -->
+                          </div>
+                          <!-- /.box-header -->
+                          <div class="box-body">
+                            <?php echo "Não existem fornecedoeres cadastrados no momento.";?>
+                          </div>
+                          <!-- /.box-body -->
+                        </div>
+                      <?php } else {
+                      foreach ($fornecedores as $key => $value) { ?>
                         <tr>
                           <td><?php echo $value['name'];?></td>
                           <td><?php echo $value['telefone'];?></td>
                           <td><?php echo $value['endereco'];?></td>
-                          <td><?php echo $value['data_nascimento'];?></td>
+                          <td><?php echo $value['forma_envio'];?></td>
+                          <td><?php echo $value['forma_pagamento'];?></td>
                           <td><?php echo $value['observacoes'];?></td>
                           <td>
-                            <?=anchor("deletar_cliente/{$value['id_cliente']}", " ", "class='fa fa-trash'" );?>
-                            <?=anchor("alterar_cliente/{$value['id_cliente']}", " ", "class='fa fa-pencil'");?>
+                            <?=anchor("deletar_fornecedor/{$value['id_fornecedor']}", " ", "class='fa fa-trash'" );?>
+                            <?=anchor("alterar_fornecedor/{$value['id_fornecedor']}", " ", "class='fa fa-pencil'");?>
                           </td>
                         </tr>
-                    <?php } ?>
+                    <?php }
+                      }?>
                     </tbody>
                 </table>
             </div>
