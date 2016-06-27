@@ -1,7 +1,7 @@
 <?php
    $submitBtn = array(
-            "class" => "btn btn-primary fa fa-floppy-o",
-            "content" => "Salvar",
+            "class" => "btn btn-primary fa fa-retweet",
+            "content" => "  Atualizar",
             "type" => "submit"
     );
 
@@ -11,7 +11,8 @@
             "type" => "text",
             "class" => "form-campo",
             "class" => "form-control",
-            "maxlength" => "150"
+            "maxlength" => "150",
+            "value" => $fornecedor['name']
     );
     $telefone = array(
             "name" => "telefone",
@@ -20,7 +21,8 @@
             "class" => "form-campo",
             "class" => "form-control",
             "maxlength" => "12",
-            "placeholder" => "Somente números"
+            "placeholder" => "Somente números",
+            "value" => $fornecedor['telefone']
     );
     $cnpj = array(
             "name" => "cnpj",
@@ -29,7 +31,8 @@
             "class" => "form-campo",
             "class" => "form-control",
             "maxlength" => "20",
-            "placeholder" => "Somente números"
+            "placeholder" => "Somente números",
+            "value" => $fornecedor['cnpj']
     );
     $endereco = array(
             "name" => "endereco",
@@ -37,14 +40,16 @@
             "type" => "text",
             "class" => "form-campo",
             "class" => "form-control",
-            "maxlength" => "200"
+            "maxlength" => "200",
+            "value" => $fornecedor['endereco']
     );
     $forma_de_pagamento = array(
             "name" => "forma_de_pagamento",
             "id" => "forma_de_pagamento",
             "type" => "text",
             "class" => "form-campo",
-            "class" => "form-control"
+            "class" => "form-control",
+            "value" => $fornecedor['forma_pagamento']
     );
     $forma_de_envio = array(
             "name" => "forma_de_envio",
@@ -52,6 +57,7 @@
             "type" => "text",
             "class" => "form-campo",
             "class" => "form-control",
+            "value" => $fornecedor['forma_envio']
     );
     $obs = array(
             "name" => "observacao",
@@ -59,8 +65,11 @@
             "type" => "text",
             "class" => "form-campo",
             "class" => "form-control",
-            "maxlength" => "255"
+            "maxlength" => "255",
+            "value" => $fornecedor['observacoes']
     );
+
+    $hidden = array('id_fornecedor' => $fornecedor['id_fornecedor']);
 ?>
 
 
@@ -72,7 +81,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <?=form_open('fornecedor/updateFornecedor','');?>
+        <?=form_open('fornecedor/updateFornecedor','', $hidden);?>
           <div class="box-body">
             <div class="form-group">
             <?php

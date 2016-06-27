@@ -69,9 +69,6 @@ class Fornecedor extends CI_Controller {
             $this->load->model("fornecedor_model");
             $salvo = $this->fornecedor_model->salvarNovo($data);
 
-            $status = "success";
-            $message = "Cliente cadastrado com sucesso!";
-
         }catch(Exception $e){
 
             $status = "danger";
@@ -115,6 +112,66 @@ class Fornecedor extends CI_Controller {
                 );
         }
         $this->listar_fornecedor($passData);
+    }
+
+    public function form_altera($id_fornecedor){
+        $this->load->model("fornecedor_model");
+
+        $fornecedor = $this->fornecedor_model->getFornecedorById($id_fornecedor);
+
+        $data = array('fornecedor' => $fornecedor);
+
+        $this->template->load_template("fornecedor/form_alteracao", $data);
+    }
+
+    public function updateFornecedor(){
+
+        $nome = $this->input->post('nome');
+        $telefone = $this->input->post('telefone');
+        $endereco = $this->input->post('endereco');
+        $cnpj = $this->input->post('cnpj');
+        $forma_envio = $this->input->post('forma_de_envio');
+        $forma_pgto = $this->input->post('forma_de_pagamento');
+        $observacao = $this->input->post('observacao');
+        $id_fornecedor = $this->input->post('id_fornecedor');
+
+        $data = array(
+                'name' => $nome,
+                'telefone' => $telefone,
+                'endereco' => $endereco,
+                'cnpj' => $cnpj,
+                'forma_envio' => $forma_envio,
+                'forma_pagamento' => $forma_pgto,
+                'observacoes' => $observacao
+            );
+
+        try{
+
+            $this->load->model("fornecedor_model");
+            $alterado = $this->fornecedor_model->updateFornecedor($data, $id_fornecedor);
+
+        }catch(Exception $e){
+
+            $status = "danger";
+            $message = $e->getMessage();
+        }
+
+        if ($alterado) {
+            $passData = array(
+                'resultado' => 1,
+                'status' => "success",
+                'message' => "Fornecedor alterado com sucesso!"
+                );
+        }else{
+            $passData = array(
+                'resultado' => 0,
+                'status' => "danger",
+                'message' => "Fornecedor nao alterado. Tente novamente"
+                );
+        }
+
+        $this->listar_fornecedor($passData);
+
     }
 
 }
