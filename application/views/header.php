@@ -82,9 +82,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
       <ul class="sidebar-menu">
         <li class="header">Seja Bem Vinda!</li>
         <li class="treeview">
-          <a>
-            <?=anchor("home", "    Página Inicial", "class='fa fa-home'");?>
-          </a>
+            <?=anchor("home", "<span>   Página Inicial</span>", "class='fa fa-home'");?>
         </li>
         <li class="treeview">
           <a href="#">
@@ -138,7 +136,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
             </li>
             <li>
               <a>
-                <span><?= anchor("salvar_nova_fornecedores", "Salvar Nova Peça", "class='fa fa-pencil'");?>
+                <span><?= anchor("cadastrar_peca", "Salvar Nova Peça", "class='fa fa-pencil'");?>
                 </span>
               </a>
             </li>
@@ -164,10 +162,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
           </ul>
         </li>
         <li class="treeview">
-          <a href="#">
-            <span><?= anchor("fluxo_caixa", "      Fluxo de Caixa", "class='fa fa-line-chart'");?>
-            </span>
-          </a>
+          <?= anchor("fluxo_caixa", "<span>    Fluxo de Caixa</span>", "class='fa fa-line-chart'");?>
         </li>
 
     </section>
