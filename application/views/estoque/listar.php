@@ -37,10 +37,10 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Lista de Fornecedores </h3>
+              <h3 class="box-title">Lista de peças em estoque </h3>
 
               <div style="margin-left:80%">
-                <?=anchor("cadastrar_fornecedores", "  Cadastrar novo", "class='btn btn-sm btn-success fa fa-save'" );?>
+                <?=anchor("cadastrar_peca", "  Cadastrar nova", "class='btn btn-sm btn-success fa fa-save'" );?>
               </div>
             </div>
             <!-- /.box-header -->
@@ -48,19 +48,19 @@
                 <table id="example2" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                          <th>Nome</th>
-                          <th>CNPJ</th>
-                          <th>Telefone</th>
-                          <th>Endereco</th>
-                          <th>Forma de Envio</th>
-                          <th>Forma de Pagamento</th>
-                          <th>Observações</th>
+                          <th>Descrição</th>
+                          <th>Tamanho</th>
+                          <th>Quantidade</th>
+                          <th>Fornecedor</th>
+                          <th>Custo</th>
+                          <th>Preço de Venda</th>
+                          <th>Foto</th>
                           <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
-                      if (!$fornecedores) {?>
+                      if (!$pecas) {?>
                         <div class="box box-warning box-solid">
                           <div class="box-header with-border">
                             <h3 class="box-title">Atenção!</h3>
@@ -72,30 +72,25 @@
                           </div>
                           <!-- /.box-header -->
                           <div class="box-body">
-                            <?php echo "Não existem fornecedoeres cadastrados no momento.";?>
+                            <?php echo "Não existem peças cadastradas no momento.";?>
                           </div>
                           <!-- /.box-body -->
                         </div>
                       <?php } else {
-                      foreach ($fornecedores as $key => $value) { ?>
+                      foreach ($pecas as $key => $value) { ?>
                         <tr>
-                          <td><?php echo $value['name'];?></td>
-                          <td><?php echo $value['cnpj'];?></td>
-                          <td><?php echo $value['telefone'];?></td>
-                          <td><?php echo $value['endereco'];?></td>
-                          <td><?php echo $value['forma_envio'];?></td>
-                          <td><?php echo $value['forma_pagamento'];?></td>
-                          <td><?php echo $value['observacoes'];?></td>
+                          <td><?php echo $value['descricao'];?></td>
+                          <td><?php echo $value['tamanho'];?></td>
+                          <td><?php echo $value['quantidade'];?></td>
+                          <td><?php echo $value['fornecedor'];?></td>
+                          <td><?php echo $value['custo'];?></td>
+                          <td><?php echo $value['preco_venda'];?></td>
+                          <td><?php echo $value['foto'];?></td>
                           <td>
-                            <?=anchor("deletar_fornecedor/{$value['id_fornecedor']}", " ", "class='fa fa-trash'" );?>
-                            <?=anchor("alterar_fornecedor/{$value['id_fornecedor']}", " ", "class='fa fa-pencil'");?>
+                            <?=anchor("deletar_peca/{$value['id_produto']}", " ", "class='fa fa-trash'" );?>
+                            <?=anchor("vender_peca/{$value['id_produto']}", "Vender", "class='btn btn-info fa fa-shop'");?>
                           </td>
                         </tr>
                     <?php }
-                      }?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
+                    }
+                    ?>
