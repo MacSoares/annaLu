@@ -18,8 +18,29 @@ class Estoque extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    public function index()
+    public function listar_pecas($passData=Null)
     {
-        // $this->load->view('welcome_message');
+        $this->load->model("estoque_model");
+        $estoque = $this->estoque_model->getEstoque();
+
+        if ($passData) {
+            $data = array(
+                'resultado' => $passData['resultado'],
+                'message' => $passData['message'],
+                'pecas' => $estoque
+                );
+        }else{
+            $data = array(
+                'resultado' => ESCONDER_LABEL,
+                'message' => 'nada a dizer',
+                'pecas' => $estoque
+            );
+        }
+
+        $this->template->load_template('estoque/listar',$data);
+    }
+
+    public function cadastrar_peca(){
+        $this->template->load_template('estoque/cadastrar');
     }
 }
