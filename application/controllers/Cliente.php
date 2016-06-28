@@ -23,7 +23,6 @@ class Cliente extends CI_Controller {
     }
 
     public function listar_cliente(){
-        define("ESCONDER_LABEL", 2);
         $this->load->model("cliente_model");
         $clientes = $this->cliente_model->getClientes();
         $data = array(

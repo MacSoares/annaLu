@@ -1,5 +1,4 @@
 <?php
-var_dump($clientes);
     if($salvo == 1){ ?>
           <div class="box box-success box-solid">
             <div class="box-header with-border">
