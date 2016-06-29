@@ -88,5 +88,59 @@ class Cliente extends CI_Controller {
         $this->template->load_template('cliente/listar', $passData);
 
     }
+    public function form_altera($id_cliente){
+        $this->load->model("cliente_model");
 
+        $cliente = $this->cliente_model->getClienteById($id_cliente);
+
+        $data = array('cliente' => $cliente);
+
+        $this->template->load_template("cliente/form_alteracao", $data);
+    }
+
+    public function updateCliente(){
+
+        $nome = $this->input->post('nome');
+        $telefone = $this->input->post('telefone');
+        $endereco = $this->input->post('endereco');
+        $data_nascimento = $this->input->post('data_nascimento');
+        $observacao = $this->input->post('observacao');
+        $id_cliente = $this->input->post('id_cliente');
+
+        $data = array(
+                'name' => $nome,
+                'telefone' => $telefone,
+                'endereco' => $endereco,
+                'data_nascimento'=> $data_nascimento,
+                'observacoes' => $observacao
+            );
+
+        try{
+
+            $this->load->model("cliente_model");
+            $alterado = $this->cliente_model->updateCliente($id_cliente, $data);
+
+        }catch(Exception $e){
+
+            $status = "danger";
+            $message = $e->getMessage();
+        }
+
+        if ($alterado) {
+            $passData = array(
+                'resultado' => 1,
+                'status' => "success",
+                'message' => "Cliente alterado com sucesso!"
+                );
+        }else{
+            $passData = array(
+                'resultado' => 0,
+                'status' => "danger",
+                'message' => "Cliente nao alterado. Tente novamente"
+                );
+        }
+
+        $this->listar_cliente($passData);
+
+    }
 }

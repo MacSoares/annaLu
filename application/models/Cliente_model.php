@@ -20,5 +20,15 @@ class Cliente_model extends CI_Model {
         return $deletado;
     }
 
+    public function updateCliente($id,$data){
+        $this->db->where('id_cliente', $id);
+        $alterado = $this->db->update('clientes', $data);
+        return $alterado;
+    }
+    public function getClienteById($id){
+        $where = array('id_cliente' => $id);
+        $cliente = $this->db->get_where('clientes', $where);
+        return $cliente->row_array();
+    }
 
 }
