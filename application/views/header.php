@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
 <head>
   <meta charset="utf-8">
   <title>AnnaLu</title>
+  <link rel="icon" href="<?=base_url()?>/annaluLogo.ico" type="image/ico">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -58,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
     <!-- Logo -->
     <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>AL</b></span>
+      <span class="logo-mini"><img src=<?=base_url("annaluLogoSmall.png");?> ></span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>A</b>nna<b>L</b>u</span>
     </a>
@@ -170,6 +171,6 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" id="logo">
     <section class="content">
 
