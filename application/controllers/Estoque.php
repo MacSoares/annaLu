@@ -18,8 +18,7 @@ class Estoque extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    public function listar_pecas($passData=Null)
-    {
+    public function listar_pecas($passData=Null){
         $this->load->model("estoque_model");
         $estoque = $this->estoque_model->getEstoque();
 
@@ -50,6 +49,10 @@ class Estoque extends CI_Controller {
         $data = array('fornecedores' => $fornecedores);
 
         $this->template->load_template('estoque/cadastrar', $data);
+    }
+
+    public function form_foto(){
+
     }
 
     public function salvarNovo(){

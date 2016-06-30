@@ -63,6 +63,7 @@ $route['cadastrar_fornecedores'] = 'fornecedor/cadastrar_fornecedor';
 $route['alterar_fornecedor/(:num)'] = 'fornecedor/form_altera/$1';
 $route['deletar_fornecedor/(:num)'] = 'fornecedor/delete/$1';
 $route['deletar_peca/(:num)'] = 'estoque/delete/$1';
+$route['carregar_foto/(:num)'] = 'estoque/form_foto/$1';
 $route['listar_pecas'] = 'estoque/listar_pecas';
 $route['cadastrar_peca'] = 'estoque/cadastrar_peca';
 $route['mostrar_reservas'] = 'reserva/mostrar_reserva';
