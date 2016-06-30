@@ -52,7 +52,7 @@ class Estoque extends CI_Controller {
     }
 
     public function form_foto(){
-
+        $this->template->load_template('estoque/upload_foto', $data);
     }
 
     public function salvarNovo(){
