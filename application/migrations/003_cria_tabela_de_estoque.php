@@ -11,7 +11,7 @@ class Migration_Cria_tabela_de_estoque extends CI_migration {
             'quantidade' => array('type' => 'INT'),
             'custo' => array('type' => 'decimal(5,2)'),
             'preco_venda' => array('type' => 'decimal(5,2)'),
-            'caminho_foto' => array('type' => 'varchar(255)')
+            'caminho_foto' => array('type' => 'varchar(255)', 'null' => TRUE)
         ));
         $this->dbforge->add_key('id_produto', true);
         $this->dbforge->create_table('estoque', true);

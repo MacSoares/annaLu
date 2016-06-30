@@ -82,13 +82,21 @@
                           <td><?php echo $value['descricao'];?></td>
                           <td><?php echo $value['tamanho'];?></td>
                           <td><?php echo $value['quantidade'];?></td>
-                          <td><?php echo $value['fornecedor'];?></td>
+                          <td><?php echo $value['id_fornecedor'];?></td>
                           <td><?php echo $value['custo'];?></td>
                           <td><?php echo $value['preco_venda'];?></td>
-                          <td><?php echo $value['foto'];?></td>
                           <td>
-                            <?=anchor("deletar_peca/{$value['id_produto']}", " ", "class='fa fa-trash'" );?>
-                            <?=anchor("vender_peca/{$value['id_produto']}", "Vender", "class='btn btn-info fa fa-shop'");?>
+                            <?php
+                              if($value['caminho_foto']){
+                                echo $value['caminho_foto'];
+                              }else{?>
+                                <?=anchor("carregar_foto/{$value['id_produto']}", "  Adicionar Foto", "class='btn btn-info fa fa-picture-o'");?>
+                            <?php } ?>
+
+                          </td>
+                          <td>
+                            <?=anchor("deletar_peca/{$value['id_produto']}", " Deletar peça", "class=' btn btn-info fa fa-trash'" );?>
+                            <?=anchor("vender_peca/{$value['id_produto']}", "  Vender", "class='btn btn-info fa fa-shopping-bag'");?>
                           </td>
                         </tr>
                     <?php }

@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-require_once(APPPATH."/controllers/Welcome.php");
+
 class Cliente extends CI_Controller {
 
     /**

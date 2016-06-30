@@ -72,7 +72,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <?=form_open('fornecedor/updateFornecedor','');?>
+        <?=form_open('fornecedor/salvarNovo','');?>
           <div class="box-body">
             <div class="form-group">
             <?php

@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+require_once(APPPATH."/controllers/Fornecedor.php");
 class Estoque extends CI_Controller {
 
     /**
@@ -23,6 +23,8 @@ class Estoque extends CI_Controller {
         $this->load->model("estoque_model");
         $estoque = $this->estoque_model->getEstoque();
 
+        $estoque = $this->modificaFornecedores($estoque);
+
         if ($passData) {
             $data = array(
                 'resultado' => $passData['resultado'],
@@ -41,6 +43,66 @@ class Estoque extends CI_Controller {
     }
 
     public function cadastrar_peca(){
-        $this->template->load_template('estoque/cadastrar');
+        $this->load->model("fornecedor_model");
+        $fornecedores = $this->fornecedor_model->getFornecedores();
+        $fornecedores = $this->preparaDadosFornecedor($fornecedores);
+
+        $data = array('fornecedores' => $fornecedores);
+
+        $this->template->load_template('estoque/cadastrar', $data);
+    }
+
+    public function salvarNovo(){
+
+        $descricao = $this->input->post("descricao");
+        $tamanho = $this->input->post("tamanho");
+        $quantidade = $this->input->post("quantidade");
+        $custo = $this->input->post("custo");
+        $precoVenda = $this->input->post("precoVenda");
+        $id_fornecedor = $this->input->post("fornecedor");
+
+        $data = array(
+                'descricao' => $descricao,
+                'tamanho' => $tamanho,
+                'quantidade' => $quantidade,
+                'custo' => $custo,
+                'preco_venda' => $precoVenda,
+                'id_fornecedor' => $id_fornecedor
+            );
+
+        try{
+            $this->load->model("estoque_model");
+            $salvo = $this->estoque_model->salvarNovo($data);
+        }catch(Exception $e){
+
+            $status = "danger";
+            $message = $e->getMessage();
+        }
+
+        if ($salvo) {
+            $passData = array(
+                'resultado' => 1,
+                'status' => "success",
+                'message' => "Nova peça cadastrada com sucesso!"
+                );
+        }else{
+            $passData = array(
+                'resultado' => 0,
+                'status' => "danger",
+                'message' => "Nova peça não cadastrada. Tente novamente"
+                );
+        }
+
+        $this->listar_pecas($passData);
+
+    }
+
+    private function preparaDadosFornecedor($fornecedores){
+
+        foreach ($fornecedores as $key => $fornecedor) {
+            $returnData[$fornecedor['id_fornecedor']] = $fornecedor['name'];
+        }
+
+        return $returnData;
     }
 }

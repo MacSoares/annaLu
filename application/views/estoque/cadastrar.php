@@ -1,14 +1,14 @@
 <?php
-   $submitBtn = array(
+    $submitBtn = array(
             "class" => "btn btn-primary fa fa-floppy-o",
-            "content" => "Salvar",
+            "content" => "    Salvar",
             "type" => "submit"
     );
 
     $descricao = array(
             "name" => "descricao",
             "id" => "descricao",
-            "type" => "text",
+            "type" => "textarea",
             "class" => "form-campo",
             "class" => "form-control",
             "maxlength" => "150"
@@ -20,16 +20,16 @@
             "class" => "form-campo",
             "class" => "form-control",
             "maxlength" => "12",
-            "placeholder" => "Somente números"
+            "placeholder" => "P/M/G/GG"
     );
-    $cnpj = array(
-            "name" => "cnpj",
-            "id" => "cnpj",
+    $custo = array(
+            "name" => "custo",
+            "id" => "custo",
             "type" => "text",
             "class" => "form-campo",
             "class" => "form-control",
-            "maxlength" => "20",
-            "placeholder" => "Somente números"
+            "maxlength" => "7",
+            "placeholder" => "R$"
     );
     $quantidade = array(
             "name" => "quantidade",
@@ -37,30 +37,20 @@
             "type" => "text",
             "class" => "form-campo",
             "class" => "form-control",
-            "maxlength" => "200"
+            "maxlength" => "4",
+            "placeholder" => "Somente números"
     );
-    $forma_de_pagamento = array(
-            "name" => "forma_de_pagamento",
-            "id" => "forma_de_pagamento",
-            "type" => "text",
-            "class" => "form-campo",
-            "class" => "form-control"
-    );
-    $forma_de_envio = array(
-            "name" => "forma_de_envio",
-            "id" => "forma_de_envio",
-            "type" => "text",
+    $precoVenda = array(
+            "name" => "precoVenda",
+            "id" => "precoVenda",
+            "type" => "number",
             "class" => "form-campo",
             "class" => "form-control",
+            "maximum" => "2000",
+            "step" => "any",
+            "placeholder" => "R$"
     );
-    $obs = array(
-            "name" => "observacao",
-            "id" => "observacao",
-            "type" => "text",
-            "class" => "form-campo",
-            "class" => "form-control",
-            "maxlength" => "255"
-    );
+
 ?>
 
 
@@ -72,13 +62,21 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <?=form_open_multipart('estoque/salvarNovo');?>
+        <?=form_open('estoque/salvarNovo');?>
           <div class="box-body">
             <div class="form-group">
             <?php
                 echo form_label("Descricao", "descricao");
                 echo form_input($descricao);
                 echo form_error("descricao");
+            ?>
+            </div>
+            <div class="form-group">
+            <?php
+                echo form_label("Fornecedor", "fornecedor");
+                echo "<br>";
+                echo form_dropdown("fornecedor", $fornecedores);
+                echo form_error("fornecedor");
             ?>
             </div>
             <div class="form-group">
@@ -97,39 +95,23 @@
             </div>
             <div class="form-group">
             <?php
-                echo form_label("CNPJ", "cnpj");
-                echo form_input($cnpj);
-                echo form_error("cnpj");
+                echo form_label("Custo", "custo");
+                echo form_input($custo);
+                echo form_error("custo");
             ?>
             </div>
             <div class="form-group">
             <?php
-                echo form_label("Forma de Envio", "forma_de_envio");
-                echo form_input($forma_de_envio);
-                echo form_error("forma_de_envio");
+                echo form_label("Preço de Revenda", "precoVenda");
+                echo form_input($precoVenda);
+                echo form_error("precoVenda");
             ?>
             </div>
-            <div class="form-group">
-            <?php
-                echo form_label("Forma de Pagamento", "forma_de_pagamento");
-                echo form_input($forma_de_pagamento);
-                echo form_error("forma_de_pagamento");
-            ?>
-            </div>
-            <div class="form-group">
-            <?php
-                echo form_label("Observações", "observacao");
-                echo form_input($obs);
-                echo form_error("observacao");
-            ?>
-            </div>
-
           </div>
           <!-- /.box-body -->
 
           <div class="box-footer">
             <?=form_button($submitBtn);?>
-          </div>
         </form>
       </div>
     </div>
