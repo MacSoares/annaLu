@@ -105,4 +105,21 @@ class Estoque extends CI_Controller {
 
         return $returnData;
     }
+
+    private function modificaFornecedores($estoque){
+        $this->load->model("fornecedor_model");
+
+        $cont = 0;
+
+        foreach ($estoque as $key => $peca) {
+            $fornecedor = $this->fornecedor_model->getFornecedorById($peca['id_fornecedor']);
+
+            $peca['id_fornecedor'] = $fornecedor['name'];
+            $returnData[$cont] = $peca;
+            $cont++;
+        }
+
+        return $returnData;
+
+    }
 }
