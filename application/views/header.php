@@ -112,13 +112,13 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
             <li>
 
               <a>
-                <span><?= anchor("listar_fornecedores", "Listar Fornecedores", "class='fa fa-list'");?>
+                <span><?= anchor("listar_fornecedores", " Listar Fornecedores", "class='fa fa-list'");?>
                 </span>
               </a>
             </li>
             <li>
              <a>
-                <span><?= anchor("cadastrar_fornecedores", "Cadastrar Fornecedores", "class='fa fa-pencil'");?>
+                <span><?= anchor("cadastrar_fornecedores", " Cadastrar Fornecedores", "class='fa fa-pencil'");?>
                 </span>
              </a>
             </li>
@@ -131,13 +131,13 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
           <ul class="treeview-menu">
             <li>
               <a>
-                <span><?= anchor("listar_pecas", "Listar Peça", "class='fa fa-list'");?>
+                <span><?= anchor("listar_pecas", " Listar Peça", "class='fa fa-list'");?>
                 </span>
               </a>
             </li>
             <li>
               <a>
-                <span><?= anchor("cadastrar_peca", "Salvar Nova Peça", "class='fa fa-pencil'");?>
+                <span><?= anchor("cadastrar_peca", " Salvar Nova Peça", "class='fa fa-pencil'");?>
                 </span>
               </a>
             </li>
@@ -150,13 +150,32 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
           <ul class="treeview-menu">
             <li>
               <a>
-                <span><?= anchor("mostrar_reservas", "Mostrar Reservas", "class='fa fa-list'");?>
+                <span><?= anchor("mostrar_reservas", " Mostrar Reservas", "class='fa fa-list'");?>
                 </span>
               </a>
             </li>
             <li>
               <a>
-                <span><?= anchor("registrar_reserva", "Registrar Reserva", "class='fa fa-pencil'");?>
+                <span><?= anchor("registrar_reserva", " Registrar Reserva", "class='fa fa-pencil'");?>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-shopping-cart"></i> <span>Vendas</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <a>
+                <span><?= anchor("listar", " Mostrar Vendas", "class='fa fa-list'");?>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span><?= anchor("cadastrar_vendas", " Registrar Venda", "class='fa fa-pencil'");?>
                 </span>
               </a>
             </li>
