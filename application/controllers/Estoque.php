@@ -97,6 +97,29 @@ class Estoque extends CI_Controller {
 
     }
 
+    public function delete($id_peca){
+
+        $this->load->model("estoque_model");
+
+        $deletado = $this->estoque_model->deletePeca($id_peca);
+
+        if($deletado){
+            $passData = array(
+                'resultado' => 1,
+                'status' => "success",
+                'message' => "Peça deletada do estoque com sucesso."
+                );
+        }else{
+            $passData = array(
+                'resultado' => 0,
+                'status' => "danger",
+                'message' => "Peça não pode ser deletada. Tente novamente"
+                );
+        }
+        $this->listar_pecas($passData);
+
+    }
+
     private function preparaDadosFornecedor($fornecedores){
 
         foreach ($fornecedores as $key => $fornecedor) {

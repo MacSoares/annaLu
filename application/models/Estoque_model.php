@@ -14,7 +14,7 @@ class Estoque_model extends CI_Model {
 
     }
 
-    public function deleteCliente($id_peca){
+    public function deletePeca($id_peca){
         $this->db->where('id_produto', $id_peca);
         $deletado = $this->db->delete('estoque');
         return $deletado;
