@@ -169,7 +169,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
           <ul class="treeview-menu">
             <li>
               <a>
-                <span><?= anchor("listar", " Mostrar Vendas", "class='fa fa-list'");?>
+                <span><?= anchor("listar_vendas", " Mostrar Vendas", "class='fa fa-list'");?>
                 </span>
               </a>
             </li>

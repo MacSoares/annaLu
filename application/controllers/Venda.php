@@ -44,10 +44,18 @@ class Venda extends CI_Controller {
 
     public function cadastrar_venda(){
         $this->load->model("cliente_model");
-        $clientes = $this->fornecedor_model->getClientes();
+        $this->load->model("estoque_model");
+
+        $clientes = $this->cliente_model->getClientes();
         $clientes = $this->preparaDadosCliente($clientes);
 
-        $data = array('clientes' => $clientes);
+        $produtos = $this->estoque_model->getEstoque();
+        $produtos = $this->preparaDadosProduto($produtos);
+
+
+        $data = array('clientes' => $clientes,
+                      'produtos' => $produtos,
+                    );
 
         $this->template->load_template('venda/cadastrar', $data);
     }
@@ -137,7 +145,32 @@ class Venda extends CI_Controller {
         foreach ($cliente as $key => $nomes) {
             $cliente = $this->cliente_model->getClienteById($nomes['id_cliente']);
 
-            $peca['id_cliente'] = $cliente['name'];
+            $nomes['id_cliente'] = $cliente['name'];
+            $returnData[$cont] = $nomes;
+            $cont++;
+        }
+
+        return $returnData;
+
+    }
+    private function preparaDadosProduto($produtos){
+
+        foreach ($produtos as $key => $produto) {
+            $returnData[$produto['id_produto']] = $produto['descricao'];
+        }
+
+        return $returnData;
+    }
+
+    private function modificaProdutos($produto){
+        $this->load->model("estoque_model");
+
+        $cont = 0;
+
+        foreach ($produto as $key => $nome) {
+            $produto = $this->estoque_model->getProdutoById($nomes['id_produto']);
+
+            $nomes['id_produto'] = $produto['descricao'];
             $returnData[$cont] = $nomes;
             $cont++;
         }
