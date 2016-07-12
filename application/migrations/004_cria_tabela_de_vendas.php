@@ -20,7 +20,7 @@ class Migration_Cria_tabela_vendas extends CI_migration {
         $addConstraint = "ALTER TABLE vendas ADD CONSTRAINT IDPRODUTO_FK FOREIGN KEY (id_produto) REFERENCES estoque(id_produto) ON DELETE RESTRICT ON UPDATE RESTRICT";
         $this->db->query($addConstraint);
 
-        $addConstraint = "ALTER TABLE vendas ADD CONSTRAINT IDCLIENTE_FK FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente) ON DELETE RESTRICT ON UPDATE RESTRICT";
+        $addConstraint = "ALTER TABLE vendas ADD CONSTRAINT IDCLIENTE_FK FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente) ON DELETE CASCADE ON UPDATE RESTRICT";
         $this->db->query($addConstraint);
 
     }

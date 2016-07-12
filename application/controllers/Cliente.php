@@ -26,6 +26,7 @@ class Cliente extends CI_Controller {
 
         $this->load->model("cliente_model");
         $clientes = $this->cliente_model->getClientes();
+        $clientes = $this->modificaDatasView($clientes);
 
         if ($passData) {
             $data = array(
@@ -149,5 +150,22 @@ class Cliente extends CI_Controller {
 
         $this->listar_cliente($passData);
 
+    }
+
+    private function modificaDatasView($clientes){
+        date_default_timezone_set('America/Sao_Paulo');
+        $cont = 0;
+        $returnData = null;
+
+        foreach ($clientes as $key => $cliente) {
+            $aniversario = DateTime::createFromFormat("Y-m-d",$cliente['data_nascimento']);
+            $cliente['data_nascimento'] = $aniversario->format("d/m/Y");
+
+            $returnData[$cont] = $cliente;
+            $cont++;
+
+        }
+
+        return $returnData;
     }
 }

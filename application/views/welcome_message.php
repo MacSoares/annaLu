@@ -21,13 +21,32 @@
                 </thead>
                 <tbody>
                   <?php
-                    foreach ($dia as $key => $aniversariantes) {?>
+                  if($dia){
+                   foreach ($dia as $key => $aniversariantes) {?>
                       <tr>
                         <td><?php echo $aniversariantes['name'];?></td>
                         <td><?php echo $aniversariantes['data_nascimento'];?></td>
                         <td><?php echo $aniversariantes['telefone'];?></td>
                       </tr>
                     <?php }
+                  }else{?>
+                    <div class="box box-warning box-solid">
+                      <div class="box-header with-border">
+                        <h3 class="box-title fa fa-comments-o fa-2x"></h3>
+
+                        <div class="box-tools pull-right">
+                          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                        <!-- /.box-tools -->
+                      </div>
+                      <!-- /.box-header -->
+                      <div class="box-body">
+                        <?php echo "Ninguém faz aniversário hoje.";?>
+                      </div>
+                      <!-- /.box-body -->
+                    </div>
+                  <?php
+                  }
                   ?>
                 </tbody>
             </table>
@@ -52,12 +71,31 @@
                 </thead>
                 <tbody>
                   <?php
+                  if($mes){
                     foreach ($mes as $key => $aniversariantes) {?>
                       <tr>
                         <td><?php echo $aniversariantes['name'];?></td>
                         <td><?php echo $aniversariantes['data_nascimento'];?></td>
                       </tr>
                     <?php }
+                  }else{?>
+                    <div class="box box-warning box-solid">
+                      <div class="box-header with-border">
+                        <h3 class="box-title fa fa-comments-o fa-2x"></h3>
+
+                        <div class="box-tools pull-right">
+                          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                        <!-- /.box-tools -->
+                      </div>
+                      <!-- /.box-header -->
+                      <div class="box-body">
+                        <?php echo "Ninguém faz aniversário nesse mês.";?>
+                      </div>
+                      <!-- /.box-body -->
+                    </div>
+                  <?php
+                  }
                   ?>
                 </tbody>
             </table>
