@@ -21,7 +21,7 @@ $hidden = array('id_peca' => $id_peca);
     <div class="col-md-6" style="margin-left:25%">
         <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Cadastrar Nova Peça</h3>
+          <h3 class="box-title">Cadastrar foto para peça</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->

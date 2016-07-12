@@ -69,6 +69,7 @@ $route['deletar_venda/(:num)'] = 'venda/delete/$1';
 $route['deletar_peca/(:num)'] = 'estoque/delete/$1';
 $route['alterar_peca/(:num)'] = 'estoque/form_altera/$1';
 $route['carregar_foto/(:num)'] = 'estoque/form_foto/$1';
+$route['deletar_foto/(:num)'] = 'estoque/delete_foto/$1';
 $route['listar_pecas'] = 'estoque/listar_pecas';
 $route['cadastrar_peca'] = 'estoque/cadastrar_peca';
 $route['mostrar_reservas'] = 'reserva/mostrar_reserva';

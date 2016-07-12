@@ -233,6 +233,37 @@ class Estoque extends CI_Controller {
 
     }
 
+    public function delete_foto($id_produto){
+        $data = array(
+                'caminho_foto' => NULL
+            );
+
+        try{
+            $this->load->model("estoque_model");
+            $salvo = $this->estoque_model->updatePeca($data, $id_produto);
+            }catch(Exception $e){
+
+                $status = "danger";
+                $message = $e->getMessage();
+            }
+
+            if ($salvo) {
+                $passData = array(
+                    'resultado' => 1,
+                    'status' => "success",
+                    'message' => "Foto apagada com sucesso!"
+                    );
+            }else{
+                $passData = array(
+                    'resultado' => 0,
+                    'status' => "danger",
+                    'message' => "Não foi possivel apagar a foto. Tente novamente"
+                    );
+            }
+
+            $this->listar_pecas($passData);
+    }
+
     private function getDadosFornecedores(){
         $this->load->model("fornecedor_model");
         $fornecedores = $this->fornecedor_model->getFornecedores();

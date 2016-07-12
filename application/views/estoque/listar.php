@@ -88,7 +88,8 @@
                           <td>
                             <?php
                               if($value['caminho_foto']){?>
-                                <img src=<?=base_url("uploads/".$value['caminho_foto']);?> height="90" width="90">
+                                <img src=<?=base_url("uploads/".$value['caminho_foto']);?> height="100" width="100"> <br>
+                                <?=anchor("deletar_foto/{$value['id_produto']}", " Deletar foto", "class=' btn btn-info fa fa-trash'" );?>
                               <?php
                               }else{?>
                                 <?=anchor("carregar_foto/{$value['id_produto']}", "  Adicionar Foto", "class='btn btn-info fa fa-picture-o'");?>
