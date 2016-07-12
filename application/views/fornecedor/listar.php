@@ -87,8 +87,8 @@
                           <td><?php echo $value['forma_pagamento'];?></td>
                           <td><?php echo $value['observacoes'];?></td>
                           <td>
-                            <?=anchor("deletar_fornecedor/{$value['id_fornecedor']}", " ", "class='fa fa-trash'" );?>
-                            <?=anchor("alterar_fornecedor/{$value['id_fornecedor']}", " ", "class='fa fa-pencil'");?>
+                            <?=anchor("deletar_fornecedor/{$value['id_fornecedor']}", " Deletar", "class=' btn btn-info btn-sm fa fa-trash'" );?>
+                            <?=anchor("alterar_fornecedor/{$value['id_fornecedor']}", " Alterar dados", "class=' btn btn-info btn-sm fa fa-pencil'");?>
                           </td>
                         </tr>
                     <?php }

@@ -20,5 +20,16 @@ class Estoque_model extends CI_Model {
         return $deletado;
     }
 
+    public function updatePeca($data, $id_produto){
+        $this->db->where('id_produto', $id_produto);
+        $alterado = $this->db->update('estoque', $data);
+        return $alterado;
+    }
+
+    public function getPecaById($id_peca){
+        $where = array('id_produto' => $id_peca);
+        $peca = $this->db->get_where('estoque', $where);
+        return $peca->row_array();
+    }
 
 }

@@ -95,7 +95,8 @@
 
                           </td>
                           <td>
-                            <?=anchor("deletar_peca/{$value['id_produto']}", " Deletar peça", "class=' btn btn-info fa fa-trash'" );?>
+                            <?=anchor("deletar_peca/{$value['id_produto']}", " Deletar peça", "class=' btn btn-info fa fa-trash'" );?> <br>
+                            <?=anchor("alterar_peca/{$value['id_produto']}", " Alterar dados", "class=' btn btn-info fa fa-pencil'" );?> <br>
                             <?=anchor("vender_peca/{$value['id_produto']}", "  Vender", "class='btn btn-info fa fa-shopping-bag'");?>
                           </td>
                         </tr>

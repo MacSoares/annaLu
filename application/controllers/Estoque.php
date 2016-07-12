@@ -42,9 +42,7 @@ class Estoque extends CI_Controller {
     }
 
     public function cadastrar_peca(){
-        $this->load->model("fornecedor_model");
-        $fornecedores = $this->fornecedor_model->getFornecedores();
-        $fornecedores = $this->preparaDadosFornecedor($fornecedores);
+        $fornecedores = $this->getDadosFornecedores();
 
         $data = array('fornecedores' => $fornecedores);
 
@@ -100,6 +98,63 @@ class Estoque extends CI_Controller {
 
     }
 
+    public function form_altera($id_peca){
+        $this->load->model("estoque_model");
+
+        $peca = $this->estoque_model->getPecaById($id_peca);
+
+        $fornecedores = $this->getDadosFornecedores();
+
+        $data = array('peca' => $peca, 'fornecedores' => $fornecedores);
+
+        $this->template->load_template("estoque/form_alteracao", $data);
+    }
+
+    public function update(){
+
+        $descricao = $this->input->post("descricao");
+        $tamanho = $this->input->post("tamanho");
+        $quantidade = $this->input->post("quantidade");
+        $custo = $this->input->post("custo");
+        $precoVenda = $this->input->post("precoVenda");
+        $id_fornecedor = $this->input->post("fornecedor");
+        $id_produto = $this->input->post("id_peca");
+
+        $data = array(
+                'descricao' => $descricao,
+                'tamanho' => $tamanho,
+                'quantidade' => $quantidade,
+                'custo' => $custo,
+                'preco_venda' => $precoVenda,
+                'id_fornecedor' => $id_fornecedor
+            );
+
+        try{
+            $this->load->model("estoque_model");
+            $salvo = $this->estoque_model->updatePeca($data, $id_produto);
+        }catch(Exception $e){
+
+            $status = "danger";
+            $message = $e->getMessage();
+        }
+
+        if ($salvo) {
+            $passData = array(
+                'resultado' => 1,
+                'status' => "success",
+                'message' => "Dados alterados com sucesso!"
+                );
+        }else{
+            $passData = array(
+                'resultado' => 0,
+                'status' => "danger",
+                'message' => "Não puderam ser alterados. Tente novamente"
+                );
+        }
+
+        $this->listar_pecas($passData);
+    }
+
     public function delete($id_peca){
 
         $this->load->model("estoque_model");
@@ -123,6 +178,13 @@ class Estoque extends CI_Controller {
 
     }
 
+    private function getDadosFornecedores(){
+        $this->load->model("fornecedor_model");
+        $fornecedores = $this->fornecedor_model->getFornecedores();
+        $fornecedores = $this->preparaDadosFornecedor($fornecedores);
+        return $fornecedores;
+    }
+
     private function preparaDadosFornecedor($fornecedores){
 
         foreach ($fornecedores as $key => $fornecedor) {
@@ -136,7 +198,7 @@ class Estoque extends CI_Controller {
         $this->load->model("fornecedor_model");
 
         $cont = 0;
-
+        $returnData = null;
         foreach ($estoque as $key => $peca) {
             $fornecedor = $this->fornecedor_model->getFornecedorById($peca['id_fornecedor']);
 
