@@ -87,8 +87,9 @@
                           <td><?php echo $value['preco_venda'];?></td>
                           <td>
                             <?php
-                              if($value['caminho_foto']){
-                                echo $value['caminho_foto'];
+                              if($value['caminho_foto']){?>
+                                <img src=<?=base_url("uploads/".$value['caminho_foto']);?> height="90" width="90">
+                              <?php
                               }else{?>
                                 <?=anchor("carregar_foto/{$value['id_produto']}", "  Adicionar Foto", "class='btn btn-info fa fa-picture-o'");?>
                             <?php } ?>

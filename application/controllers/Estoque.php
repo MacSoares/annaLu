@@ -49,8 +49,63 @@ class Estoque extends CI_Controller {
         $this->template->load_template('estoque/cadastrar', $data);
     }
 
-    public function form_foto(){
+    public function form_foto($id_peca){
+        $data = array('id_peca'=>$id_peca);
         $this->template->load_template('estoque/upload_foto', $data);
+    }
+
+    public function upload(){
+        $config['upload_path']          = './uploads/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['max_size']             = 4096;
+        $config['max_width']            = 0;
+        $config['max_height']           = 0;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('userfile')){
+
+            $passData = array(
+            'resultado' => 0,
+            'status' => "danger",
+            'message' => $this->upload->display_errors()
+            );
+
+            $this->listar_pecas($passData);
+        }else{
+
+            $caminho_foto = $this->upload->data('file_name');
+            $id_produto = $this->input->post('id_peca');
+
+            $data = array(
+                    'caminho_foto' => $caminho_foto
+                );
+
+            try{
+            $this->load->model("estoque_model");
+            $salvo = $this->estoque_model->updatePeca($data, $id_produto);
+            }catch(Exception $e){
+
+                $status = "danger";
+                $message = $e->getMessage();
+            }
+
+            if ($salvo) {
+                $passData = array(
+                    'resultado' => 1,
+                    'status' => "success",
+                    'message' => "Foto cadastrada com sucesso!"
+                    );
+            }else{
+                $passData = array(
+                    'resultado' => 0,
+                    'status' => "danger",
+                    'message' => "Não foi possivel fazer o upload da foto. Tente novamente"
+                    );
+            }
+
+            $this->listar_pecas($passData);
+        }
     }
 
     public function salvarNovo(){
