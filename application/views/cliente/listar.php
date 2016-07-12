@@ -1,5 +1,5 @@
 <?php
-    if($salvo == 1){ ?>
+    if($resultado == 1){ ?>
           <div class="box box-success box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">Sucesso!</h3>
@@ -16,7 +16,7 @@
             <!-- /.box-body -->
           </div>
 
-    <?php }else if($salvo ==0){ ?>
+    <?php }else if($resultado ==0){ ?>
           <div class="box box-danger box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">Erro!</h3>

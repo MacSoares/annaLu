@@ -20,6 +20,64 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->template->load_template('welcome_message');
+		$aniversariantesMes = $this->getAniversariantesDoMes();
+		$aniversariantesDia = $this->getAniversariantesDoDia();
+
+		$data = array(
+				'mes' => $aniversariantesMes,
+				'dia' => $aniversariantesDia
+			);
+
+		$this->template->load_template('welcome_message', $data);
+	}
+
+	private function getAniversariantesDoMes(){
+		date_default_timezone_set('America/Sao_Paulo');
+		$this->load->model("cliente_model");
+
+		$clientes = $this->cliente_model->getClientes();
+
+		$mes = date("m");
+		$cont = 0;
+        $returnData = null;
+
+        foreach ($clientes as $key => $cliente) {
+            $aniversario = DateTime::createFromFormat("Y-m-d",$cliente['data_nascimento']);
+            $cliente['data_nascimento'] = $aniversario->format("d/m");
+
+            if($mes == $aniversario->format("m")){
+            	$returnData[$cont] = $cliente;
+            	$cont++;
+            }
+
+        }
+
+        return $returnData;
+
+	}
+
+	private function getAniversariantesDoDia(){
+		date_default_timezone_set('America/Sao_Paulo');
+		$this->load->model("cliente_model");
+
+		$clientes = $this->cliente_model->getClientes();
+
+		$dia = date("d");
+		$cont = 0;
+        $returnData = null;
+
+        foreach ($clientes as $key => $cliente) {
+            $aniversario = DateTime::createFromFormat("Y-m-d",$cliente['data_nascimento']);
+            $cliente['data_nascimento'] = $aniversario->format("d/m");
+
+            if($dia == $aniversario->format("d")){
+            	$returnData[$cont] = $cliente;
+            	$cont++;
+            }
+
+        }
+
+        return $returnData;
+
 	}
 }

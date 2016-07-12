@@ -22,14 +22,24 @@ class Cliente extends CI_Controller {
         $this->template->load_template('cliente/cadastrar');
     }
 
-    public function listar_cliente(){
+    public function listar_cliente($passData=Null){
+
         $this->load->model("cliente_model");
         $clientes = $this->cliente_model->getClientes();
-        $data = array(
-            'salvo' => ESCONDER_LABEL,
-            'message' => '',
-            'clientes' => $clientes
+
+        if ($passData) {
+            $data = array(
+                'resultado' => $passData['resultado'],
+                'message' => $passData['message'],
+                'clientes' => $clientes
+                );
+        }else{
+            $data = array(
+                'resultado' => ESCONDER_LABEL,
+                'message' => 'nada a dizer',
+                'clientes' => $clientes
             );
+        }
         $this->template->load_template('cliente/listar', $data);
     }
 
@@ -62,10 +72,7 @@ class Cliente extends CI_Controller {
             $this->load->model("cliente_model");
             $salvo = $this->cliente_model->salvarNovo($data);
 
-            $status = "success";
-            $message = "Cliente cadastrado com sucesso!";
-
-        }catch(StudentRegistrationException $e){
+        }catch(Exception $e){
 
             $status = "danger";
             $message = $e->getMessage();
@@ -73,19 +80,19 @@ class Cliente extends CI_Controller {
 
         if ($salvo) {
             $passData = array(
-                'salvo' => 1,
+                'resultado' => 1,
                 'status' => "success",
                 'message' => "Cliente cadastrado com sucesso!"
                 );
         }else{
             $passData = array(
-                'salvo' => 0,
+                'resultado' => 0,
                 'status' => "danger",
                 'message' => "Cliente nao cadastrado. Tente novamente"
                 );
         }
 
-        $this->template->load_template('cliente/listar', $passData);
+        $this->listar_cliente($passData);
 
     }
     public function form_altera($id_cliente){
