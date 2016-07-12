@@ -64,6 +64,7 @@ $route['alterar_fornecedor/(:num)'] = 'fornecedor/form_altera/$1';
 $route['deletar_fornecedor/(:num)'] = 'fornecedor/delete/$1';
 $route['listar_vendas'] = 'venda/listar_vendas';
 $route['cadastrar_vendas'] = 'venda/cadastrar_venda';
+$route['vender_peca/(:num)'] = 'venda/cadastrar_venda/$1';
 $route['quitar_parcela/(:num)/(:num)'] = 'venda/quitar_parcela/$1/$2';
 $route['deletar_venda/(:num)'] = 'venda/delete/$1';
 $route['deletar_peca/(:num)'] = 'estoque/delete/$1';
