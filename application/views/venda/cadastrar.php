@@ -13,12 +13,12 @@
             "class" => "form-control"
     );
     $parcelas = array(
-            "name" => "tamanho",
-            "id" => "tamanho",
-            "type" => "text",
+            "name" => "parcelas",
+            "id" => "parcelas",
+            "type" => "number",
             "class" => "form-campo",
             "class" => "form-control",
-            "maxlength" => "12",
+            "min"=>1
     );
     $forma_pagamento = array(
             "name" => "forma_pagamento",
@@ -64,7 +64,7 @@
                 echo form_label("Produto", "estoque");
                 echo "<br>";
                 echo form_dropdown("estoque", $produtos);
-                echo form_error("produto");
+                echo form_error("estoque");
             ?>
             </div>
             <div class="form-group">

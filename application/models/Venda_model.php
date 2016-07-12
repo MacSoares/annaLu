@@ -4,19 +4,19 @@ class Venda_model extends CI_Model {
 
     public function salvarNovo($data){
 
-        $salvo = $this->db->insert('venda', $data);
+        $salvo = $this->db->insert('vendas', $data);
         return $salvo;
     }
 
     public function getVenda(){
-        $vendas = $this->db->get('venda');
+        $vendas = $this->db->get('vendas');
         return $vendas->result_array();
 
     }
 
     public function deleteVenda($id_venda){
         $this->db->where('id', $id_venda);
-        $deletado = $this->db->delete('venda');
+        $deletado = $this->db->delete('vendas');
         return $deletado;
     }
 

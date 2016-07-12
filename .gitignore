@@ -6,7 +6,7 @@
 !*/cache/index.html
 !*/cache/.htaccess
 
-database.php
-config.php
+application/config/database.php
+application/config/config.php
 
 *.sublime-workspace

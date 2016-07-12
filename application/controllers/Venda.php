@@ -23,7 +23,9 @@ class Venda extends CI_Controller {
         $this->load->model("venda_model");
         $venda = $this->venda_model->getVenda();
 
-        $venda = $this->modificaVendas($venda);
+        $venda = $this->modificaClientes($venda);
+        $venda = $this->modificaProdutos($venda);
+        $venda = $this->modificaDatasVendas($venda);
 
         if ($passData) {
             $data = array(
@@ -61,21 +63,21 @@ class Venda extends CI_Controller {
     }
 
     public function salvarNovo(){
-
-        $id_produto = $this->input->post("produto");
+        date_default_timezone_set('America/Sao_Paulo');
+        $id_produto = $this->input->post("estoque");
         $id_cliente = $this->input->post("cliente");
-        $data_venda = $this->input->post("data_venda");
         $preco = $this->input->post("preco");
         $forma_pagamento = $this->input->post("forma_pagamento");
         $parcelas = $this->input->post("parcelas");
+        $data_venda = date("Y-m-d");
 
         $data = array(
                 'id_produto' => $id_produto,
                 'id_cliente' => $id_cliente,
                 'data_venda' => $data_venda,
                 'preco' => $preco,
-                'forma_pagamento' => $forma_pagamento,
-                'parcelas' => $parcelas
+                'forma_pgto' => $forma_pagamento,
+                'parcelas_restantes' => $parcelas
             );
 
         try{
@@ -153,10 +155,15 @@ class Venda extends CI_Controller {
         return $returnData;
 
     }
-    private function preparaDadosProduto($produtos){
+    private function modificaDatasVendas($vendas){
+        date_default_timezone_set('America/Sao_Paulo');
 
-        foreach ($produtos as $key => $produto) {
-            $returnData[$produto['id_produto']] = $produto['descricao'];
+        $cont = 0;
+        foreach ($vendas as $key => $venda) {
+            $data = DateTime::createFromFormat("Y-m-d",$venda['data_venda']);
+            $venda['data_venda'] = $data->format("d/m/Y");
+            $returnData[$cont] = $venda;
+            $cont++;
         }
 
         return $returnData;
@@ -168,10 +175,10 @@ class Venda extends CI_Controller {
         $cont = 0;
 
         foreach ($produto as $key => $nome) {
-            $produto = $this->estoque_model->getProdutoById($nomes['id_produto']);
+            $produto = $this->estoque_model->getPecaById($nome['id_produto']);
 
-            $nomes['id_produto'] = $produto['descricao'];
-            $returnData[$cont] = $nomes;
+            $nome['id_produto'] = $produto['descricao'];
+            $returnData[$cont] = $nome;
             $cont++;
         }
 
