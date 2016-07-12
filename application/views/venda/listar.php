@@ -54,6 +54,8 @@
                           <th>Preço</th>
                           <th>Forma de Pagamento</th>
                           <th>Parcelas Restantes</th>
+                          <th>Débito Restante<th>
+                          <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -80,9 +82,30 @@
                           <td><?php echo $value['id_produto'];?></td>
                           <td><?php echo $value['id_cliente'];?></td>
                           <td><?php echo $value['data_venda'];?></td>
-                          <td><?php echo $value['preco'];?></td>
+                          <td><?php echo "R$ ".$value['preco'];?></td>
                           <td><?php echo $value['forma_pgto'];?></td>
-                          <td><?php echo $value['parcelas_restantes'];?></td>
+                          <td><?php echo $value['parcelas_restantes']-1;?></td>
+                          <td>
+                            <?php
+                              if($value['parcelas_restantes']-1){
+                                $falta_pagar = $value['preco'] / $value['parcelas_restantes'];
+                                echo "R$ ".$falta_pagar.".00";
+                              }else{
+                                echo "R$ 0.00";
+                              }
+                            ?>
+                          </td>
+                          <td>
+                            <?=anchor("deletar_venda/{$value['id']}", " Cancelar venda", "class=' btn btn-info btn-sm fa fa-ban'" );?>
+                            <?php
+                            if($value['parcelas_restantes']-1){
+                              $parcela_a_quitar = $value['parcelas_restantes']-1;
+                              ?>
+                              <br>
+                              <?=anchor("quitar_parcela/{$value['id']}/{$parcela_a_quitar}", " Quitar Parcela", "class=' btn btn-info btn-sm fa fa-dollar'" );?>
+                            <?php }
+                            ?>
+                          </td>
                         </tr>
                     <?php }
                       }?>

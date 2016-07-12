@@ -83,7 +83,7 @@
             </div>
             <div class="form-group">
             <?php
-                echo form_label("Parcelas Restantes", "parcelas");
+                echo form_label("Quantidade de Parcelas", "parcelas");
                 echo form_input($parcelas);
                 echo form_error("parcelas");
             ?>

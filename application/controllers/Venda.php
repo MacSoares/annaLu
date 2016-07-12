@@ -23,9 +23,11 @@ class Venda extends CI_Controller {
         $this->load->model("venda_model");
         $venda = $this->venda_model->getVenda();
 
-        $venda = $this->modificaClientes($venda);
-        $venda = $this->modificaProdutos($venda);
-        $venda = $this->modificaDatasVendas($venda);
+        if($venda){
+            $venda = $this->modificaClientes($venda);
+            $venda = $this->modificaProdutos($venda);
+            $venda = $this->modificaDatasVendas($venda);
+        }
 
         if ($passData) {
             $data = array(
@@ -107,6 +109,38 @@ class Venda extends CI_Controller {
 
     }
 
+    public function quitar_parcela($id_venda,$parcelas_restantes){
+
+        $this->load->model("venda_model");
+
+        $data = array('parcelas_restantes'=>$parcelas_restantes);
+
+        try{
+            $salvo = $this->venda_model->quitarParcela($data, $id_venda);
+        }catch(Exception $e){
+
+            $status = "danger";
+            $message = $e->getMessage();
+        }
+
+        if ($salvo) {
+            $passData = array(
+                'resultado' => 1,
+                'status' => "success",
+                'message' => "Parcela quitada com sucesso!"
+                );
+        }else{
+            $passData = array(
+                'resultado' => 0,
+                'status' => "danger",
+                'message' => "Parcela não pode ser quitada. Tente novamente"
+                );
+        }
+
+        $this->listar_vendas($passData);
+
+    }
+
     public function delete($id_venda){
 
         $this->load->model("venda_model");
@@ -143,7 +177,6 @@ class Venda extends CI_Controller {
         $this->load->model("cliente_model");
 
         $cont = 0;
-
         foreach ($cliente as $key => $nomes) {
             $cliente = $this->cliente_model->getClienteById($nomes['id_cliente']);
 
@@ -155,6 +188,15 @@ class Venda extends CI_Controller {
         return $returnData;
 
     }
+    private function preparaDadosProduto($produtos){
+
+        foreach ($produtos as $key => $produto) {
+            $returnData[$produto['id_produto']] = $produto['descricao'];
+        }
+
+        return $returnData;
+    }
+
     private function modificaDatasVendas($vendas){
         date_default_timezone_set('America/Sao_Paulo');
 

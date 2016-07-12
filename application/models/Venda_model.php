@@ -20,5 +20,11 @@ class Venda_model extends CI_Model {
         return $deletado;
     }
 
+    public function quitarParcela($data, $id_venda){
+        $this->db->where('id', $id_venda);
+        $alterado = $this->db->update('vendas', $data);
+        return $alterado;
+    }
+
 
 }
