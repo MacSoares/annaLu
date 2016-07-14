@@ -110,6 +110,27 @@ class Reserva extends CI_Controller {
         $this->mostrar_reserva($passData);
     }
 
+    public function cancelar_reserva($id_reserva,$id_produto){
+        $this->load->model("reserva_model");
+
+        $deletado = $this->reserva_model->deleteReserva($id_reserva);
+        $incrementado = $this->incrementaEstoque($id_produto);
+        if($deletado & $incrementado){
+            $passData = array(
+                'resultado' => 1,
+                'status' => "success",
+                'message' => "Reserva de produto cancelada com sucesso."
+                );
+        }else{
+            $passData = array(
+                'resultado' => 0,
+                'status' => "danger",
+                'message' => "Reserva não pode ser cancelada. Tente novamente"
+                );
+        }
+        $this->mostrar_reserva($passData);
+    }
+
     private function decrementaEstoque($id_produto){
         $this->load->model("estoque_model");
 
@@ -124,6 +145,20 @@ class Reserva extends CI_Controller {
         }else{
            throw new Exception("Produto não existe em estoque!");
         }
+
+        return $atualizado;
+    }
+
+    private function incrementaEstoque($id_produto){
+        $this->load->model("estoque_model");
+
+        $produto = $this->estoque_model->getPecaById($id_produto);
+
+        $quantidade = $produto['quantidade'] + 1;
+
+        $this->load->model("estoque_model");
+        $data = array('quantidade' => $quantidade);
+        $atualizado = $this->estoque_model->updatePeca($data, $id_produto);
 
         return $atualizado;
     }

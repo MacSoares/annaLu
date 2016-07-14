@@ -40,7 +40,7 @@
               <h3 class="box-title">Lista de itens vendidos </h3>
 
               <div style="margin-left:80%">
-                <?=anchor("resgistrar_reserva", "  Realizar Reserva", "class='btn btn-sm btn-success fa fa-save'" );?>
+                <?=anchor("registrar_reserva", "  Realizar Reserva", "class='btn btn-sm btn-success fa fa-save'" );?>
               </div>
             </div>
             <!-- /.box-header -->
@@ -89,7 +89,7 @@
                             ?>
                           </td>
                           <td>
-                            <?=anchor("deletar_venda/{$value['id_reserva']}", " Cancelar reserva", "class=' btn btn-info btn-sm fa fa-ban'" );?>
+                            <?=anchor("cancelar_reserva/{$value['id_reserva']}/{$value['id_produto']}", " Cancelar reserva", "class=' btn btn-info btn-sm fa fa-ban'" );?>
                             <?=anchor("reserva_vender/{$value['id_produto']}/{$value['id_cliente']}", "  Vender", "class='btn btn-info fa fa-shopping-bag'");?>
                           </td>
                         </tr>

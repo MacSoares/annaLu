@@ -15,7 +15,7 @@ class Reserva_model extends CI_Model {
     }
 
     public function deleteReserva($id_reserva){
-        $this->db->where('id', $id_reserva);
+        $this->db->where('id_reserva', $id_reserva);
         $deletado = $this->db->delete('reserva');
         return $deletado;
     }
