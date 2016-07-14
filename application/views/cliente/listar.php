@@ -57,7 +57,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($clientes as $key => $value) { ?>
+                   <?php if (!$clientes) {?>
+                        <div class="box box-warning box-solid">
+                          <div class="box-header with-border">
+                            <h3 class="box-title">Atenção!</h3>
+
+                            <div class="box-tools pull-right">
+                              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                            <!-- /.box-tools -->
+                          </div>
+                          <!-- /.box-header -->
+                          <div class="box-body">
+                            <?php echo "Não existem clientes cadastradas no momento.";?>
+                          </div>
+                          <!-- /.box-body -->
+                        </div>
+                      <?php }else{
+                         foreach ($clientes as $key => $value) { ?>
                         <tr>
                           <td><?php echo $value['name'];?></td>
                           <td><?php echo $value['telefone'];?></td>
@@ -69,7 +86,8 @@
                             <?=anchor("alterar_cliente/{$value['id_cliente']}", " Alterar dados", "class=' btn btn-info btn-sm fa fa-pencil'");?>
                           </td>
                         </tr>
-                    <?php } ?>
+                    <?php }
+                    }?>
                     </tbody>
                 </table>
             </div>
