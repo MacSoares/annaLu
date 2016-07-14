@@ -193,6 +193,7 @@ class Venda extends CI_Controller {
         return $returnData;
 
     }
+
     private function preparaDadosProduto($produtos){
 
         foreach ($produtos as $key => $produto) {
