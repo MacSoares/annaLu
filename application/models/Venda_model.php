@@ -26,5 +26,12 @@ class Venda_model extends CI_Model {
         return $alterado;
     }
 
+    public function salvarNovoFluxo($data){
+        $caixa = array(
+                'valor_entrada' => $data['preco'],
+                'data' => $data['data_venda']);
+        $fluxoSalvo = $this->db->insert('caixa',$caixa);
+        return $fluxoSalvo;
+    }
 
 }

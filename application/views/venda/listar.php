@@ -55,7 +55,6 @@
                           <th>Forma de Pagamento</th>
                           <th>Parcelas Restantes</th>
                           <th>Débito Restante<th>
-                          <th></th>
                         </tr>
                     </thead>
                     <tbody>
