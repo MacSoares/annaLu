@@ -13,6 +13,14 @@
             "class" => "form-control",
             "maxlength" => "150"
     );
+    $identificador = array(
+            "name" => "identificador",
+            "id" => "identificador",
+            "type" => "text",
+            "class" => "form-campo",
+            "class" => "form-control",
+            "maxlength" => "12"
+    );
     $tamanho = array(
             "name" => "tamanho",
             "id" => "tamanho",
@@ -20,7 +28,7 @@
             "class" => "form-campo",
             "class" => "form-control",
             "maxlength" => "12",
-            "placeholder" => "P/M/G/GG"
+            "placeholder" => "P/M/G/GG ou Numeração Sapato"
     );
     $custo = array(
             "name" => "custo",
@@ -69,6 +77,13 @@
                 echo form_label("Descricao", "descricao");
                 echo form_input($descricao);
                 echo form_error("descricao");
+            ?>
+            </div>
+            <div class="form-group">
+            <?php
+                echo form_label("Identificador", "identificador");
+                echo form_input($identificador);
+                echo form_error("identificador");
             ?>
             </div>
             <div class="form-group">
