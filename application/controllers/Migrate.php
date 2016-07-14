@@ -1,8 +1,8 @@
 <?php
 
-class Utils extends CI_Controller {
+class Migrate extends CI_Controller {
 
-    public function migrate() {
+    public function index() {
         $this->load->library('migration');
         if ($this->migration->current()) {
             echo "Migrado com sucesso";

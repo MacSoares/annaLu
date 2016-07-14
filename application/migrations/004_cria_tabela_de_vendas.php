@@ -1,5 +1,5 @@
 <?php
-class Migration_Cria_tabela_vendas extends CI_migration {
+class Migration_Cria_tabela_de_vendas extends CI_migration {
 
     public function up() {
         // User table
@@ -17,10 +17,8 @@ class Migration_Cria_tabela_vendas extends CI_migration {
 
 
         // Definindo relaçoes com produto e cliente
-        $addConstraint = "ALTER TABLE vendas ADD CONSTRAINT IDPRODUTO_FK FOREIGN KEY (id_produto) REFERENCES estoque(id_produto) ON DELETE RESTRICT ON UPDATE RESTRICT";
-        $this->db->query($addConstraint);
 
-        $addConstraint = "ALTER TABLE vendas ADD CONSTRAINT IDCLIENTE_FK FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente) ON DELETE CASCADE ON UPDATE RESTRICT";
+        $addConstraint = "ALTER TABLE vendas ADD CONSTRAINT IDCLIENTE_FK FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente) ON DELETE NO ACTION ON UPDATE RESTRICT";
         $this->db->query($addConstraint);
 
     }

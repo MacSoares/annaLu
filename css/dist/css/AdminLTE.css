@@ -150,6 +150,11 @@ body.hold-transition .main-header .logo {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+.back{
+  background-image: url(../../images/annalu-logo-big.png);
+
+}
 /* H1 - H6 font */
 h1,
 h2,

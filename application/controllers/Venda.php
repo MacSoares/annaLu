@@ -91,10 +91,15 @@ class Venda extends CI_Controller {
                 'parcelas_restantes' => $parcelas
             );
 
+        $caixa = array(
+                'valor_entrada' => $preco,
+                'data' => $data_venda
+            );
+
         try{
             $this->load->model("venda_model");
             $salvo = $this->venda_model->salvarNovo($data);
-            $salvo = $this->venda_model->salvarNovoFluxo($data);
+            $salvo = $this->venda_model->salvarNovoFluxo($caixa);
         }catch(Exception $e){
 
             $status = "danger";
@@ -118,7 +123,8 @@ class Venda extends CI_Controller {
         $this->listar_vendas($passData);
 
     }
-    
+
+
 
     public function quitar_parcela($id_venda,$parcelas_restantes){
 
@@ -231,7 +237,7 @@ class Venda extends CI_Controller {
         foreach ($produto as $key => $nome) {
             $produto = $this->estoque_model->getPecaById($nome['id_produto']);
 
-            $nome['id_produto'] = $produto['descricao'];
+            $nome['id_produto'] = $produto['identificador'];
             $returnData[$cont] = $nome;
             $cont++;
         }

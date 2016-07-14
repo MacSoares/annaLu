@@ -165,6 +165,7 @@ class Reserva extends CI_Controller {
 
     private function preparaDadosCliente($clientes){
 
+        $returnData = NULL;
         foreach ($clientes as $key => $cliente) {
             $returnData[$cliente['id_cliente']] = $cliente['name'];
         }
@@ -174,6 +175,7 @@ class Reserva extends CI_Controller {
 
     private function preparaDadosProduto($produtos){
 
+        $returnData = NULL;
         foreach ($produtos as $key => $produto) {
             $returnData[$produto['id_produto']] = $produto['descricao'];
         }
@@ -185,6 +187,7 @@ class Reserva extends CI_Controller {
         date_default_timezone_set('America/Sao_Paulo');
 
         $cont = 0;
+        $returnData = NULL;
         foreach ($reservas as $key => $reserva) {
             $data = DateTime::createFromFormat("Y-m-d",$reserva['data_reserva']);
             $reserva['data_reserva'] = $data->format("d/m/Y");
@@ -199,7 +202,7 @@ class Reserva extends CI_Controller {
         $this->load->model("estoque_model");
 
         $cont = 0;
-
+        $returnData = NULL;
         foreach ($produto as $key => $nome) {
             $produto = $this->estoque_model->getPecaById($nome['id_produto']);
 
@@ -217,6 +220,7 @@ class Reserva extends CI_Controller {
         $this->load->model("cliente_model");
 
         $cont = 0;
+        $returnData = NULL;
         foreach ($cliente as $key => $nomes) {
             $cliente = $this->cliente_model->getClienteById($nomes['id_cliente']);
 

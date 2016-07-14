@@ -109,16 +109,19 @@ class Estoque extends CI_Controller {
     }
 
     public function salvarNovo(){
-
+        date_default_timezone_set('America/Sao_Paulo');
         $descricao = $this->input->post("descricao");
+        $identificador = $this->input->post("identificador");
         $tamanho = $this->input->post("tamanho");
         $quantidade = $this->input->post("quantidade");
         $custo = $this->input->post("custo");
         $precoVenda = $this->input->post("precoVenda");
         $id_fornecedor = $this->input->post("fornecedor");
+        $data_hoje = date("Y-m-d");
 
         $data = array(
                 'descricao' => $descricao,
+                'identificador' => $identificador,
                 'tamanho' => $tamanho,
                 'quantidade' => $quantidade,
                 'custo' => $custo,
@@ -126,9 +129,18 @@ class Estoque extends CI_Controller {
                 'id_fornecedor' => $id_fornecedor
             );
 
+        $valor_entrada = $custo * $quantidade;
+
+        $data2 = array(
+                'data' => $data_hoje,
+                'valor_saida'=> $valor_entrada,
+            );
+
         try{
             $this->load->model("estoque_model");
             $salvo = $this->estoque_model->salvarNovo($data);
+            $this->load->model("venda_model");
+            $vendido = $this->venda_model->salvarNovoFluxo($data2);
         }catch(Exception $e){
 
             $status = "danger";
@@ -273,6 +285,7 @@ class Estoque extends CI_Controller {
 
     private function preparaDadosFornecedor($fornecedores){
 
+        $returnData = NULL;
         foreach ($fornecedores as $key => $fornecedor) {
             $returnData[$fornecedor['id_fornecedor']] = $fornecedor['name'];
         }
