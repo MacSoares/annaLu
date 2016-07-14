@@ -130,9 +130,10 @@ class Estoque extends CI_Controller {
             );
 
         $valor_entrada = $custo * $quantidade;
+
         $data2 = array(
-                'data' = $data_hoje,
-                'valor_saida', $valor_entrada
+                'data' => $data_hoje,
+                'valor_saida'=> $valor_entrada,
             );
 
         try{
