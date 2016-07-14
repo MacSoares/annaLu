@@ -46,13 +46,17 @@ class Venda extends CI_Controller {
         $this->template->load_template('venda/listar',$data);
     }
 
-    public function cadastrar_venda($id_produto=NULL){
+    public function cadastrar_venda($id_produto=NULL, $id_cliente=NULL){
         $this->load->model("cliente_model");
         $this->load->model("estoque_model");
 
-        $clientes = $this->cliente_model->getClientes();
-        $clientes = $this->preparaDadosCliente($clientes);
-
+        if($id_cliente){
+            $clientes = $this->cliente_model->getClienteById($id_cliente);
+            $cliente[$clientes['id_cliente']] = $clientes['name'];
+        }else{
+            $clientes = $this->cliente_model->getClientes();
+            $cliente = $this->preparaDadosCliente($clientes);
+        }
         if($id_produto){
             $produto = $this->estoque_model->getPecaById($id_produto);
             $produtos[$produto['id_produto']] = $produto['descricao'];
@@ -62,7 +66,7 @@ class Venda extends CI_Controller {
         }
 
 
-        $data = array('clientes' => $clientes,
+        $data = array('clientes' => $cliente,
                       'produtos' => $produtos,
                     );
 

@@ -8,7 +8,7 @@ class Migration_Cria_tabela_de_estoque extends CI_migration {
             'id_fornecedor' => array('type' => 'INT'),
             'descricao' => array('type' => 'varchar(255)'),
             'tamanho' => array('type' => 'varchar(3)'),
-            'quantidade' => array('type' => 'INT'),
+            'quantidade' => array('type' => 'INT', 'null'=>TRUE),
             'custo' => array('type' => 'decimal(5,2)'),
             'preco_venda' => array('type' => 'decimal(5,2)'),
             'caminho_foto' => array('type' => 'varchar(255)', 'null' => TRUE)

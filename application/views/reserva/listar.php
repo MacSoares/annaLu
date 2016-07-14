@@ -40,7 +40,7 @@
               <h3 class="box-title">Lista de itens vendidos </h3>
 
               <div style="margin-left:80%">
-                <?=anchor("cadastrar_vendas", "  Gerar venda", "class='btn btn-sm btn-success fa fa-save'" );?>
+                <?=anchor("resgistrar_reserva", "  Realizar Reserva", "class='btn btn-sm btn-success fa fa-save'" );?>
               </div>
             </div>
             <!-- /.box-header -->
@@ -76,13 +76,21 @@
                       <?php } else {
                       foreach ($reservas as $key => $value) { ?>
                         <tr>
-                          <td><?php echo $value['id_produto'];?></td>
-                          <td><?php echo $value['id_cliente'];?></td>
+                          <td><?php echo $value['nome_produto'];?></td>
+                          <td><?php echo $value['nome_cliente'];?></td>
                           <td><?php echo $value['data_reserva'];?></td>
-                          <td><?php echo $value['forma_pgto'];?></td>
                           <td>
-                            <?=anchor("deletar_venda/{$value['id']}", " Cancelar venda", "class=' btn btn-info btn-sm fa fa-ban'" );?>
-                            <?=anchor("quitar_parcela/{$value['id']}/{$parcela_a_quitar}", " Quitar Parcela", "class=' btn btn-info btn-sm fa fa-dollar'" );?>
+                            <?php
+                              if($value['vendido']){
+                                echo "Produto já vendido";
+                              }else{
+                                echo "Produto aguardando venda";
+                              }
+                            ?>
+                          </td>
+                          <td>
+                            <?=anchor("deletar_venda/{$value['id_reserva']}", " Cancelar reserva", "class=' btn btn-info btn-sm fa fa-ban'" );?>
+                            <?=anchor("reserva_vender/{$value['id_produto']}/{$value['id_cliente']}", "  Vender", "class='btn btn-info fa fa-shopping-bag'");?>
                           </td>
                         </tr>
                     <?php }
