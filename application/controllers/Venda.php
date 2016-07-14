@@ -231,7 +231,7 @@ class Venda extends CI_Controller {
         foreach ($produto as $key => $nome) {
             $produto = $this->estoque_model->getPecaById($nome['id_produto']);
 
-            $nome['id_produto'] = $produto['descricao'];
+            $nome['id_produto'] = $produto['identificador'];
             $returnData[$cont] = $nome;
             $cont++;
         }

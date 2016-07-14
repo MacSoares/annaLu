@@ -111,6 +111,7 @@ class Estoque extends CI_Controller {
     public function salvarNovo(){
 
         $descricao = $this->input->post("descricao");
+        $identificador = $this->input->post("identificador");
         $tamanho = $this->input->post("tamanho");
         $quantidade = $this->input->post("quantidade");
         $custo = $this->input->post("custo");
@@ -119,6 +120,7 @@ class Estoque extends CI_Controller {
 
         $data = array(
                 'descricao' => $descricao,
+                'identificador' => $identificador,
                 'tamanho' => $tamanho,
                 'quantidade' => $quantidade,
                 'custo' => $custo,
@@ -273,6 +275,7 @@ class Estoque extends CI_Controller {
 
     private function preparaDadosFornecedor($fornecedores){
 
+        $returnData = NULL;
         foreach ($fornecedores as $key => $fornecedor) {
             $returnData[$fornecedor['id_fornecedor']] = $fornecedor['name'];
         }
