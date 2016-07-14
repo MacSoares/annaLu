@@ -94,6 +94,7 @@ class Venda extends CI_Controller {
         try{
             $this->load->model("venda_model");
             $salvo = $this->venda_model->salvarNovo($data);
+            $salvo = $this->venda_model->salvarNovoFluxo($data);
         }catch(Exception $e){
 
             $status = "danger";
@@ -117,6 +118,7 @@ class Venda extends CI_Controller {
         $this->listar_vendas($passData);
 
     }
+    
 
     public function quitar_parcela($id_venda,$parcelas_restantes){
 
