@@ -49,6 +49,7 @@
                     <thead>
                         <tr>
                           <th>Descrição</th>
+                          <th>Identificador</th>
                           <th>Tamanho</th>
                           <th>Quantidade</th>
                           <th>Fornecedor</th>
@@ -80,6 +81,7 @@
                       foreach ($pecas as $key => $value) { ?>
                         <tr>
                           <td><?php echo $value['descricao'];?></td>
+                          <td><?php echo $value['identificador'];?></td>
                           <td><?php echo $value['tamanho'];?></td>
                           <td><?php echo $value['quantidade'];?></td>
                           <td><?php echo $value['id_fornecedor'];?></td>

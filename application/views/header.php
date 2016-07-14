@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
   <!-- jvectormap -->
   <link rel="stylesheet" href=<?=base_url("css/plugins/jvectormap/jquery-jvectormap-1.2.2.css")?>>
   <!-- Theme style -->
-  <link rel="stylesheet" href=<?=base_url("css/dist/css/AdminLTE.min.css")?>>
+  <link rel="stylesheet" href=<?=base_url("css/dist/css/AdminLTE.css")?>>
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href=<?=base_url("css/dist/css/skins/_all-skins.min.css")?>>
@@ -190,6 +190,6 @@ defined('BASEPATH') OR exit('No direct script access allowed'); $this->load->hel
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" id="logo">
+  <div class="content-wrapper back" id="logo">
     <section class="content">
 
