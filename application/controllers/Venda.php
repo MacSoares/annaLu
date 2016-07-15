@@ -82,17 +82,28 @@ class Venda extends CI_Controller {
         $parcelas = $this->input->post("parcelas");
         $data_venda = date("Y-m-d");
 
+        if ($parcelas > 1) {
+            $entrada = $preco / $parcelas;
+            $valor_restante = $preco - $entrada;
+        }else{
+            $entrada = $preco;
+            $valor_restante = 0;
+        }
+
+        $parcelas_restantes = $parcelas -1;
         $data = array(
                 'id_produto' => $id_produto,
                 'id_cliente' => $id_cliente,
                 'data_venda' => $data_venda,
                 'preco' => $preco,
                 'forma_pgto' => $forma_pagamento,
-                'parcelas_restantes' => $parcelas
+                'parcelas_restantes' => $parcelas_restantes,
+                'valor_restante' => $valor_restante,
+                'qtd_parcelas' => $parcelas
             );
 
         $caixa = array(
-                'valor_entrada' => $preco,
+                'valor_entrada' => $entrada,
                 'data' => $data_venda
             );
 
@@ -126,14 +137,23 @@ class Venda extends CI_Controller {
 
 
 
-    public function quitar_parcela($id_venda,$parcelas_restantes){
-
+    public function quitar_parcela($id_venda,$parcelas_restantes,$valor_restante,$valor_caixa){
+        date_default_timezone_set('America/Sao_Paulo');
         $this->load->model("venda_model");
+        $data_venda = date("Y-m-d");
+        $data = array(
+                'parcelas_restantes'=>$parcelas_restantes,
+                'valor_restante' => $valor_restante
+            );
 
-        $data = array('parcelas_restantes'=>$parcelas_restantes);
+        $caixa = array(
+                'valor_entrada' => $valor_caixa,
+                'data' => $data_venda
+            );
 
         try{
             $salvo = $this->venda_model->quitarParcela($data, $id_venda);
+            $salvo2 = $this->venda_model->salvarNovoFluxo($caixa);
         }catch(Exception $e){
 
             $status = "danger";

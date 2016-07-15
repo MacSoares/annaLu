@@ -83,25 +83,18 @@
                           <td><?php echo $value['data_venda'];?></td>
                           <td><?php echo "R$ ".$value['preco'];?></td>
                           <td><?php echo $value['forma_pgto'];?></td>
-                          <td><?php echo $value['parcelas_restantes']-1;?></td>
+                          <td><?php echo $value['parcelas_restantes'];?></td>
+                          <td><?php echo "R$ ".$value['valor_restante'];?></td>
                           <td>
-                            <?php
-                              if($value['parcelas_restantes']-1){
-                                $falta_pagar = $value['preco'] / $value['parcelas_restantes'];
-                                echo "R$ ".$falta_pagar.".00";
-                              }else{
-                                echo "R$ 0.00";
-                              }
-                            ?>
-                          </td>
-                          <td>
+                          <?php if($value['parcelas_restantes']){?>
                             <?=anchor("deletar_venda/{$value['id']}", " Cancelar venda", "class=' btn btn-info btn-sm fa fa-ban'" );?>
                             <?php
-                            if($value['parcelas_restantes']-1){
                               $parcela_a_quitar = $value['parcelas_restantes']-1;
+                              $valor_subtrai = $value['preco'] / $value['qtd_parcelas'];
+                              $valor_restante = $value['valor_restante'] - $valor_subtrai;
                               ?>
                               <br>
-                              <?=anchor("quitar_parcela/{$value['id']}/{$parcela_a_quitar}", " Quitar Parcela", "class=' btn btn-info btn-sm fa fa-dollar'" );?>
+                              <?=anchor("quitar_parcela/{$value['id']}/{$parcela_a_quitar}/{$valor_restante}/{$valor_subtrai}", " Quitar Parcela", "class=' btn btn-info btn-sm fa fa-dollar'" );?>
                             <?php }
                             ?>
                           </td>
